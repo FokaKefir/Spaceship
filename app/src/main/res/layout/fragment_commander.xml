@@ -6,9 +6,5 @@
     android:background="@drawable/contror_room_final_simetric"
     tools:context=".gui.fragment.CommanderFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="commander module" />
 
 </FrameLayout>

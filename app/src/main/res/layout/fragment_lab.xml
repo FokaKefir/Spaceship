@@ -6,9 +6,5 @@
     android:background="@drawable/technikal_room"
     tools:context=".gui.fragment.LabFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="lab module" />
 
 </FrameLayout>
