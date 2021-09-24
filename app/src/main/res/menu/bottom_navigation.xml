@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/nav_medical_module"
-        android:icon="@drawable/ic_medical"
-        android:title="Medical module"/>
+
 
     <item
         android:id="@+id/nav_commander_module"
         android:icon="@drawable/ic_commander"
         android:title="Commander module"/>
+    <item
+        android:id="@+id/nav_medical_module"
+        android:icon="@drawable/ic_medical"
+        android:title="Medical module"/>
 
     <item
         android:id="@+id/nav_lab_module"
