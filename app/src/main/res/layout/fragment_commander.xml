@@ -49,6 +49,56 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.50" />
 
+        <RelativeLayout
+            android:id="@+id/layout_commander"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guideline6"
+            app:layout_constraintEnd_toEndOf="@id/guideline7"
+            app:layout_constraintTop_toTopOf="@id/guideline8"
+            app:layout_constraintBottom_toBottomOf="@id/guideline9"
+            android:background="@drawable/panel_border">
+
+            <ImageButton
+                android:id="@+id/btn_close_command_panel"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_baseline_close_24"
+                android:background="?android:attr/selectableItemBackground"/>
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
