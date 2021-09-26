@@ -18,6 +18,9 @@ import com.fokakefir.spaceship.gui.fragment.TechnologyFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     // region 0. Constants
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private LabFragment labFragment;
     private TechnologyFragment technologyFragment;
     private AirlockFragment airlockFragment;
+
+    private List<Fragment> fragments;
 
     private Fragment selectedFragment;
 
@@ -60,16 +65,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.bottomNav = findViewById(R.id.bottom_navigation);
         this.bottomNav.setOnNavigationItemSelectedListener(this);
 
-        this.medicalFragment = new MedicalFragment(this);
         this.commanderFragment = new CommanderFragment(this);
+        this.medicalFragment = new MedicalFragment(this);
         this.labFragment = new LabFragment(this);
         this.technologyFragment = new TechnologyFragment(this);
         this.airlockFragment = new AirlockFragment(this);
 
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, this.medicalFragment).hide(this.medicalFragment).commit();
+        this.fragments = new ArrayList<>();
+        this.fragments.add(this.commanderFragment);
+        this.fragments.add(this.medicalFragment);
+        this.fragments.add(this.labFragment);
+        this.fragments.add(this.technologyFragment);
+        this.fragments.add(this.airlockFragment);
+
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, this.commanderFragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, this.medicalFragment).hide(this.medicalFragment).commit();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, this.labFragment).hide(this.labFragment).commit();
         getSupportFragmentManager().beginTransaction()
@@ -88,41 +100,46 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment newFragment = null;
+
         switch (item.getItemId()) {
             case R.id.nav_commander_module:
-                getSupportFragmentManager().beginTransaction().hide(this.selectedFragment).show(this.commanderFragment).commit();
-                this.selectedFragment = this.commanderFragment;
+                newFragment = this.commanderFragment;
                 this.fabLeft.setVisibility(View.GONE);
                 this.fabRight.setVisibility(View.VISIBLE);
-                return true;
+                break;
 
             case R.id.nav_medical_module:
-                getSupportFragmentManager().beginTransaction().hide(this.selectedFragment).show(this.medicalFragment).commit();
-                this.selectedFragment = this.medicalFragment;
+                newFragment = this.medicalFragment;
                 this.fabLeft.setVisibility(View.VISIBLE);
                 this.fabRight.setVisibility(View.VISIBLE);
-                return true;
+                break;
 
             case R.id.nav_lab_module:
-                getSupportFragmentManager().beginTransaction().hide(this.selectedFragment).show(this.labFragment).commit();
-                this.selectedFragment = this.labFragment;
+                newFragment = this.labFragment;
                 this.fabLeft.setVisibility(View.VISIBLE);
                 this.fabRight.setVisibility(View.VISIBLE);
-                return true;
+                break;
 
             case R.id.nav_technology_module:
-                getSupportFragmentManager().beginTransaction().hide(this.selectedFragment).show(this.technologyFragment).commit();
-                this.selectedFragment = this.technologyFragment;
+                newFragment = this.technologyFragment;
                 this.fabLeft.setVisibility(View.VISIBLE);
                 this.fabRight.setVisibility(View.VISIBLE);
-                return true;
+                break;
 
             case R.id.nav_airlock_module:
-                getSupportFragmentManager().beginTransaction().hide(this.selectedFragment).show(this.airlockFragment).commit();
-                this.selectedFragment = this.airlockFragment;
+                newFragment = this.airlockFragment;
                 this.fabLeft.setVisibility(View.VISIBLE);
                 this.fabRight.setVisibility(View.GONE);
-                return true;
+                break;
+        }
+
+        if (newFragment != null && newFragment != this.selectedFragment) {
+            getSupportFragmentManager().beginTransaction()
+                    .hide(this.selectedFragment).show(newFragment).commit();
+            this.selectedFragment = newFragment;
+
+            return true;
         }
         return false;
     }
