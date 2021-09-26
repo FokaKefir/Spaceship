@@ -19,6 +19,7 @@
             app:layout_constraintEnd_toEndOf="@id/guideline3"
             app:layout_constraintTop_toTopOf="@id/guideline4"
             app:layout_constraintBottom_toBottomOf="@id/guideline5"
+            android:text="Subsistence system"
             android:background="?android:attr/selectableItemBackground" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -57,6 +58,7 @@
             app:layout_constraintEnd_toEndOf="@id/guideline7"
             app:layout_constraintTop_toTopOf="@id/guideline8"
             app:layout_constraintBottom_toBottomOf="@id/guideline9"
+            android:text="Com system"
             android:background="?android:attr/selectableItemBackground" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -78,14 +80,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.33" />
+            app:layout_constraintGuide_percent="0.32" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45" />
+            app:layout_constraintGuide_percent="0.46" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

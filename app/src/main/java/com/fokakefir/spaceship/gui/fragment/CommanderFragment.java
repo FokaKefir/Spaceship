@@ -63,7 +63,6 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
         this.btnDailyKnowledgeCheck = this.view.findViewById(R.id.btn_daily_knowledge_check);
 
         this.layoutCommander.setVisibility(View.GONE);
-        this.layoutCommander.setAlpha(0.75f);
 
         this.btnCommanderTable.setOnClickListener(this);
         this.btnClose.setOnClickListener(this);

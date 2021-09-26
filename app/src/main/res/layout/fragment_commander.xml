@@ -57,14 +57,15 @@
             app:layout_constraintEnd_toEndOf="@id/guideline7"
             app:layout_constraintTop_toTopOf="@id/guideline8"
             app:layout_constraintBottom_toBottomOf="@id/guideline9"
+            android:alpha="0.75"
             android:background="@drawable/panel_border">
 
             <ImageButton
                 android:id="@+id/btn_close_command_panel"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_margin="8dp"
                 android:src="@drawable/ic_baseline_close_24"
                 android:background="?android:attr/selectableItemBackground"/>

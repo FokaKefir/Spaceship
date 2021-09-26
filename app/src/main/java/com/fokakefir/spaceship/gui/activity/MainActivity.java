@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.fabLeft = findViewById(R.id.fab_left);
         this.fabRight = findViewById(R.id.fab_right);
 
-        this.fabLeft.setAlpha(0.33f);
-        this.fabRight.setAlpha(0.33f);
         this.fabLeft.setOnClickListener(this);
         this.fabRight.setOnClickListener(this);
         this.fabLeft.setVisibility(View.GONE);
