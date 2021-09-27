@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.fragment.AirlockFragment;
@@ -79,15 +78,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.fragments.add(this.airlockFragment);
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, this.commanderFragment).commit();
+                .add(R.id.fragment_container_main, this.commanderFragment).commit();
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, this.medicalFragment).hide(this.medicalFragment).commit();
+                .add(R.id.fragment_container_main, this.medicalFragment).hide(this.medicalFragment).commit();
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, this.labFragment).hide(this.labFragment).commit();
+                .add(R.id.fragment_container_main, this.labFragment).hide(this.labFragment).commit();
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, this.technologyFragment).hide(this.technologyFragment).commit();
+                .add(R.id.fragment_container_main, this.technologyFragment).hide(this.technologyFragment).commit();
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, this.airlockFragment).hide(this.airlockFragment).commit();
+                .add(R.id.fragment_container_main, this.airlockFragment).hide(this.airlockFragment).commit();
 
         this.selectedFragment = this.commanderFragment;
 
