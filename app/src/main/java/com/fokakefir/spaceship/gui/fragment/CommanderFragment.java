@@ -14,6 +14,10 @@ import androidx.fragment.app.Fragment;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.activity.MainActivity;
+import com.fokakefir.spaceship.gui.fragment.commander.AlertsFragment;
+import com.fokakefir.spaceship.gui.fragment.commander.HealthFragment;
+import com.fokakefir.spaceship.gui.fragment.commander.KnowledgeFragment;
+import com.fokakefir.spaceship.gui.fragment.commander.OrbitalFragment;
 import com.fokakefir.spaceship.gui.fragment.commander.SystemFragment;
 
 public class CommanderFragment extends Fragment implements View.OnClickListener {
@@ -35,7 +39,7 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
     private Button btnHealthStatusCheck;
     private Button btnDailyKnowledgeCheck;
 
-    private SystemFragment systemFragment;
+    private Fragment selectedFragment;
 
     // endregion
 
@@ -69,7 +73,9 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
         this.btnHealthStatusCheck.setOnClickListener(this);
         this.btnDailyKnowledgeCheck.setOnClickListener(this);
 
-        this.systemFragment = new SystemFragment(this.activity);
+        this.selectedFragment = new KnowledgeFragment(this.activity);
+        this.activity.getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container_commander, this.selectedFragment).commit();
 
         return this.view;
     }
@@ -93,16 +99,30 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
 
             this.btnCommanderTable.setVisibility(View.VISIBLE);
         } else if (view.getId() == R.id.btn_system_check) {
+            this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
+            this.selectedFragment = new SystemFragment(this.activity);
             this.activity.getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container_commander, this.systemFragment).commit();
+                    .add(R.id.fragment_container_commander, this.selectedFragment).commit();
         } else if (view.getId() == R.id.btn_orbital_check) {
-
+            this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
+            this.selectedFragment = new OrbitalFragment(this.activity);
+            this.activity.getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_commander, this.selectedFragment).commit();
         } else if (view.getId() == R.id.btn_alerts_check) {
-
+            this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
+            this.selectedFragment = new AlertsFragment(this.activity);
+            this.activity.getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_commander, this.selectedFragment).commit();
         } else if (view.getId() == R.id.btn_last_health_status_check) {
-
+            this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
+            this.selectedFragment = new HealthFragment(this.activity);
+            this.activity.getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_commander, this.selectedFragment).commit();
         } else if (view.getId() == R.id.btn_daily_knowledge_check) {
-
+            this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
+            this.selectedFragment = new KnowledgeFragment(this.activity);
+            this.activity.getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_commander, this.selectedFragment).commit();
         }
     }
 
