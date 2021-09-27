@@ -3,13 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/activity_main.xml" value="0.2671875" />
-        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/drawable/panel_border.xml" value="0.17894736842105263" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_alerts.xml" value="0.16598360655737704" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_health.xml" value="0.16598360655737704" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_knowledge.xml" value="0.16598360655737704" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_orbital.xml" value="0.16598360655737704" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_system.xml" value="0.16598360655737704" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_medical.xml" value="0.1284153005464481" />
       </map>
     </option>
   </component>

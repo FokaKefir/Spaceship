@@ -15,20 +15,6 @@
             android:layout_width="200dp"
             android:layout_height="200dp" />
 
-        <Button
-            android:id="@+id/btn_heal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Heal"
-            android:layout_below="@id/view_pager"/>
-
-        <Button
-            android:id="@+id/btn_sport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sport"
-            android:layout_below="@id/btn_heal"/>
-
     </RelativeLayout>
 
 

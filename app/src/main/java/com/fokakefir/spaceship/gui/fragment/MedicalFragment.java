@@ -15,7 +15,7 @@ import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.activity.MainActivity;
 import com.fokakefir.spaceship.gui.viewpager.ImageAdapter;
 
-public class MedicalFragment extends Fragment implements View.OnClickListener {
+public class MedicalFragment extends Fragment {
 
     // region 1. Decl and Init
 
@@ -25,9 +25,6 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
 
     private ViewPager viewPager;
     private ImageAdapter adapter;
-
-    private Button btnHeal;
-    private Button btnSport;
 
     // endregion
 
@@ -41,12 +38,6 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         this.view = inflater.inflate(R.layout.fragment_medical, container, false);
 
-        this.btnHeal = this.view.findViewById(R.id.btn_heal);
-        this.btnSport = this.view.findViewById(R.id.btn_sport);
-
-        this.btnHeal.setOnClickListener(this);
-        this.btnSport.setOnClickListener(this);
-
         this.viewPager = this.view.findViewById(R.id.view_pager);
         this.adapter = new ImageAdapter(getContext());
         this.viewPager.setAdapter(this.adapter);
@@ -56,16 +47,5 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
 
     // endregion
 
-    // region 3. Button listener
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn_heal) {
-            Toast.makeText(activity, "Heal", Toast.LENGTH_SHORT).show();
-        } else if (v.getId() == R.id.btn_sport) {
-            Toast.makeText(activity, "Sport", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    // endregion
 }

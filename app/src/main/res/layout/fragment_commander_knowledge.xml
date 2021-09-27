@@ -4,17 +4,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gui.fragment.commander.KnowledgeFragment">
+    tools:context=".gui.fragment.commander.KnowledgeFragment"
+    android:background="@color/turquoise_darker">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <WebView
+            android:id="@+id/vw_daily_knowledge"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="knowledge"/>
+            android:background="@color/turquoise_darker"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_margin="4dp"
+            app:layout_anchor="@id/fab_next"
+            app:layout_anchorGravity="left"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            android:background="@null"
+            app:tint="@color/white"
+            app:backgroundTint="@null" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_baseline_chevron_right_24"
+            android:background="@null"
+            app:tint="@color/white"
+            app:backgroundTint="@null" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </FrameLayout>
