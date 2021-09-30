@@ -34,35 +34,35 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/img_heart0"
+                    android:id="@+id/img_health_heart0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/ic_heart_1"/>
 
                 <ImageView
-                    android:id="@+id/img_heart1"
+                    android:id="@+id/img_health_heart1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/ic_heart_1"/>
 
                 <ImageView
-                    android:id="@+id/img_heart2"
+                    android:id="@+id/img_health_heart2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/ic_heart_1"/>
 
                 <ImageView
-                    android:id="@+id/img_heart3"
+                    android:id="@+id/img_health_heart3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/ic_heart_1"/>
 
                 <ImageView
-                    android:id="@+id/img_heart4"
+                    android:id="@+id/img_health_heart4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,7 +94,7 @@
                         android:textColor="@color/white"/>
 
                     <ProgressBar
-                        android:id="@+id/progress_radioactivity"
+                        android:id="@+id/progress_health_radioactivity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -107,7 +107,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/txt_muscle_power"
+                    android:id="@+id/txt_health_muscle_power"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -116,7 +116,7 @@
                     android:textSize="16sp"/>
 
                 <TextView
-                    android:id="@+id/txt_bone_density"
+                    android:id="@+id/txt_health_bone_density"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -125,7 +125,7 @@
                     android:textSize="16sp"/>
 
                 <TextView
-                    android:id="@+id/txt_last_time_checked"
+                    android:id="@+id/txt_health_last_time_checked"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"

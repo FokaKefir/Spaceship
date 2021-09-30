@@ -63,17 +63,17 @@ public class HealthFragment extends Fragment {
         this.view = inflater.inflate(R.layout.fragment_commander_health, container, false);
 
         this.imgHearts = new ImageView[]{
-                this.view.findViewById(R.id.img_heart0),
-                this.view.findViewById(R.id.img_heart1),
-                this.view.findViewById(R.id.img_heart2),
-                this.view.findViewById(R.id.img_heart3),
-                this.view.findViewById(R.id.img_heart4)
+                this.view.findViewById(R.id.img_health_heart0),
+                this.view.findViewById(R.id.img_health_heart1),
+                this.view.findViewById(R.id.img_health_heart2),
+                this.view.findViewById(R.id.img_health_heart3),
+                this.view.findViewById(R.id.img_health_heart4)
         };
 
-        this.progressRadioactivity = this.view.findViewById(R.id.progress_radioactivity);
-        this.txtMusclePower = this.view.findViewById(R.id.txt_muscle_power);
-        this.txtBoneDensity = this.view.findViewById(R.id.txt_bone_density);
-        this.txtLastTimeChecked = this.view.findViewById(R.id.txt_last_time_checked);
+        this.progressRadioactivity = this.view.findViewById(R.id.progress_health_radioactivity);
+        this.txtMusclePower = this.view.findViewById(R.id.txt_health_muscle_power);
+        this.txtBoneDensity = this.view.findViewById(R.id.txt_health_bone_density);
+        this.txtLastTimeChecked = this.view.findViewById(R.id.txt_health_last_time_checked);
 
         setHealth(this.health);
         setRadioActivity(this.percentRadioactivity);
