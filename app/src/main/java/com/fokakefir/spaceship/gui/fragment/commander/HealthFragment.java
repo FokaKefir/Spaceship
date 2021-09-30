@@ -30,12 +30,32 @@ public class HealthFragment extends Fragment {
     private TextView txtBoneDensity;
     private TextView txtLastTimeChecked;
 
+    private int health;
+    private int percentRadioactivity;
+    private int percentMusclePower;
+    private int percentBoneDensity;
+    private int lastTick;
+
     // endregion
 
     // region 2. Lifecycle and constructor
 
     public HealthFragment(MainActivity activity) {
         this.activity = activity;
+        this.health = 1;
+        this.percentRadioactivity = 0;
+        this.percentMusclePower = 0;
+        this.percentBoneDensity = 0;
+        this.lastTick = 0;
+    }
+
+    public HealthFragment(MainActivity activity, int health, int percentRadioactivity, int percentMusclePower, int percentBoneDensity, int lastTick) {
+        this.activity = activity;
+        this.health = health;
+        this.percentRadioactivity = percentRadioactivity;
+        this.percentMusclePower = percentMusclePower;
+        this.percentBoneDensity = percentBoneDensity;
+        this.lastTick = lastTick;
     }
 
     @Override
@@ -54,6 +74,12 @@ public class HealthFragment extends Fragment {
         this.txtMusclePower = this.view.findViewById(R.id.txt_muscle_power);
         this.txtBoneDensity = this.view.findViewById(R.id.txt_bone_density);
         this.txtLastTimeChecked = this.view.findViewById(R.id.txt_last_time_checked);
+
+        setHealth(this.health);
+        setRadioActivity(this.percentRadioactivity);
+        setMusclePower(this.percentMusclePower);
+        setBoneDestiny(this.percentBoneDensity);
+        setLastTimeChecked(this.lastTick);
 
         return this.view;
     }
