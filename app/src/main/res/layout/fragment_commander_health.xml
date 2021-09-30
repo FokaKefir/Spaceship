@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="@id/guideline0"
             app:layout_constraintEnd_toEndOf="@id/guideline1"
-            android:src="@drawable/ic_door"/>
+            android:src="@drawable/ember"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -161,9 +161,9 @@
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="@id/guideline2"
+            android:src="@drawable/gif_dna"
             app:layout_constraintEnd_toEndOf="@id/guideline3"
-            android:src="@drawable/test"/>
+            app:layout_constraintStart_toStartOf="@id/guideline2" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline0"
