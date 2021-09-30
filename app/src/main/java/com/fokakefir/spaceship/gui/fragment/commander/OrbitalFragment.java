@@ -29,12 +29,38 @@ public class OrbitalFragment extends Fragment {
 
     private ProgressBar progressDistance;
 
+    private int traveledDistance;
+    private int distance;
+    private int speed;
+    private int acceleration;
+    private int tickRemaining;
+    private int trackDeviation;
+    private int distancePercent;
+
     // endregion
 
     // region 2. Lifecycle and constructor
 
     public OrbitalFragment(MainActivity activity) {
         this.activity = activity;
+        this.traveledDistance = 0;
+        this.distance = 0;
+        this.speed = 0;
+        this.acceleration = 0;
+        this.tickRemaining = 0;
+        this.trackDeviation = 0;
+        this.distancePercent = 0;
+    }
+
+    public OrbitalFragment(MainActivity activity, int traveledDistance, int distance, int speed, int acceleration, int tickRemaining, int trackDeviation, int distancePercent) {
+        this.activity = activity;
+        this.traveledDistance = traveledDistance;
+        this.distance = distance;
+        this.speed = speed;
+        this.acceleration = acceleration;
+        this.tickRemaining = tickRemaining;
+        this.trackDeviation = trackDeviation;
+        this.distancePercent = distancePercent;
     }
 
     @Override
@@ -49,6 +75,14 @@ public class OrbitalFragment extends Fragment {
         this.txtTrackDeviation = this.view.findViewById(R.id.txt_orbital_track_deviation);
         this.progressDistance = this.view.findViewById(R.id.progress_orbital_distance);
 
+        setTraveledDistance(this.traveledDistance);
+        setDistance(this.distance);
+        setSpeed(this.speed);
+        setAcceleration(this.acceleration);
+        setTickRemaining(this.tickRemaining);
+        setTrackDeviation(this.trackDeviation);
+        setProgressDistance(this.distancePercent);
+
         return this.view;
     }
 
@@ -62,6 +96,26 @@ public class OrbitalFragment extends Fragment {
 
     public void setDistance(int distance) {
         this.txtDistance.setText("Distance: " + distance + " km");
+    }
+
+    public void setSpeed(int speed) {
+        this.txtSpeed.setText("Speed: " + speed + " km/h");
+    }
+
+    public void setAcceleration(int acceleration) {
+        this.txtAcceleration.setText("Acceleration: " + acceleration + " m/s^2");
+    }
+
+    public void setTickRemaining(int remTick) {
+        this.txtTickRemaining.setText("Remaining: " + remTick + " tick");
+    }
+
+    public void setTrackDeviation(int distance) {
+        this.txtTrackDeviation.setText("Track deviation: " + distance + " km");
+    }
+
+    public void setProgressDistance(int percent) {
+        this.progressDistance.setProgress(percent);
     }
 
     // endregion

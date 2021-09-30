@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -14,6 +15,7 @@ import com.fokakefir.spaceship.gui.fragment.CommanderFragment;
 import com.fokakefir.spaceship.gui.fragment.LabFragment;
 import com.fokakefir.spaceship.gui.fragment.MedicalFragment;
 import com.fokakefir.spaceship.gui.fragment.TechnologyFragment;
+import com.fokakefir.spaceship.logic.GameService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,9 +26,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // region 0. Constants
 
+    public static final int DELAY_MINUTES = 1;
+
     // endregion
 
     // region 1. Decl and Init
+
+    private GameService gameService;
 
     private BottomNavigationView bottomNav;
 
@@ -42,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private FloatingActionButton fabLeft;
     private FloatingActionButton fabRight;
+
+    private Handler handler;
 
     // endregion
 
@@ -88,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         this.selectedFragment = this.commanderFragment;
 
+        this.gameService = new GameService();
+        this.handler = new Handler();
     }
 
 
@@ -168,6 +178,35 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 this.bottomNav.setSelectedItemId(R.id.nav_airlock_module);
             }
         }
+    }
+
+    // endregion
+
+    // region 5. Game loop
+
+    final Runnable r = new Runnable() {
+        public void run() {
+            nextTick();
+            handler.postDelayed(this, DELAY_MINUTES * 60 * 1000);
+        }
+    };
+
+    private void nextTick() {
+        if (this.gameService.tick() == 0) {
+            // TODO dead
+        } else {
+            // TODO refresh
+        }
+    }
+
+    // endregion
+
+    // region 6. Getters and Setters
+
+
+    // TODO getters
+    public int getTraveledDistance() {
+        return 0;
     }
 
     // endregion

@@ -86,4 +86,16 @@ public class GameService{
 		str.append(ship.toString());
 		return str.toString();
 	}
+
+	public Ship getShip() {
+		return ship;
+	}
+
+	public void setShip(Ship ship) {
+		this.ship = ship;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
 }
