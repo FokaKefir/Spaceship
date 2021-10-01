@@ -1,9 +1,10 @@
 body {
   font-family: Consolas;
   background: #004C99;
+  color: white;
 }
 
 a {
-  color: aqua;
-  text-decoration: underline;
+  color: whtie;
+  text-decoration: none;
 }
