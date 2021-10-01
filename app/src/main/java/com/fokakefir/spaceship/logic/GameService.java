@@ -74,7 +74,7 @@ public class GameService{
 		if(Math.random()<0.1)ship.raiseThrust();
 		
 		if(--nextFlare < 1)flareDuration = (int)(Math.random()*3) +4;
-		if((flareDuration-- > 0) && player.getRoom() != 4)player.damage();
+		if((flareDuration-- > 0) && player.getRoom() != 2)player.damage();
 		if(flareDuration ==0 )nextFlare =  (int)(Math.random()*8) +17;
 
 		if(player.getCurrentHealth() < 1 || ship.getReactorTemperature() > 3)
@@ -139,5 +139,9 @@ public class GameService{
 	public HealthData getHealthData() {
 		HealthData healthData = new HealthData();
 		return healthData;
+	}
+
+	public void setPlayerRoom(int room) {
+		this.player.setRoom(room);
 	}
 }

@@ -49,4 +49,20 @@ public class Player{
 		str.append("\n]");
 		return str.toString();
 	}
+
+	public int getMaxHealth() {
+		return maxHealth;
+	}
+
+	public void setMaxHealth(int maxHealth) {
+		this.maxHealth = maxHealth;
+	}
+
+	public void setCurrentHealth(int currentHealth) {
+		this.currentHealth = currentHealth;
+	}
+
+	public void setRoom(int room) {
+		this.room = room;
+	}
 }
