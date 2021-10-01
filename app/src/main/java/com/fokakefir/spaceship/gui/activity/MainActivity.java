@@ -214,12 +214,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private void nextTick() {
         if (this.gameService.tick() == -1) {
-            // TODO dead
-            Toast.makeText(this, "dead", Toast.LENGTH_SHORT).show();
-        } else {
-            // TODO refresh
+            endGame(false);
         }
         this.txtTick.setText("Tick: " + this.gameService.getTime());
+    }
+
+    private void endGame(boolean win) {
+        if (win) {
+            Toast.makeText(this, "Game ended, you loose", Toast.LENGTH_SHORT).show();
+        } else {
+
+        }
     }
 
     @SuppressLint("SetTextI18n")
