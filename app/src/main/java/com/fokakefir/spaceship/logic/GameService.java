@@ -1,10 +1,16 @@
 package com.fokakefir.spaceship.logic;
 
 
+import com.fokakefir.spaceship.model.Alert;
+import com.fokakefir.spaceship.model.HealthData;
+import com.fokakefir.spaceship.model.OrbitalData;
 import com.fokakefir.spaceship.model.Player;
 import com.fokakefir.spaceship.model.Ship;
+import com.fokakefir.spaceship.model.SystemData;
 
 import java.lang.StringBuilder;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameService{
 	private int time;
@@ -113,5 +119,25 @@ public class GameService{
 
 	public void setTime(int time) {
 		this.time = time;
+	}
+
+	public SystemData getSystemData() {
+		SystemData systemData = new SystemData();
+		return systemData;
+	}
+
+	public OrbitalData getOrbitalData() {
+		OrbitalData orbitalData = new OrbitalData();
+		return orbitalData;
+	}
+
+	public List<Alert> getAlerts() {
+		List<Alert> alerts = new ArrayList<>();
+		return alerts;
+	}
+
+	public HealthData getHealthData() {
+		HealthData healthData = new HealthData();
+		return healthData;
 	}
 }

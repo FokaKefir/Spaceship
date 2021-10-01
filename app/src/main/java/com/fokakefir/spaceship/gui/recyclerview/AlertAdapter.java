@@ -59,7 +59,7 @@ public class AlertAdapter extends RecyclerView.Adapter<AlertAdapter.AlertViewHol
             case Alert.ROOM_TECH_ID:
                 holder.imgRoomIcon.setImageResource(R.drawable.ic_technology);
                 break;
-            case Alert.ROOM_AIRLOCK:
+            case Alert.ROOM_AIRLOCK_ID:
                 holder.imgRoomIcon.setImageResource(R.drawable.ic_door);
                 break;
         }

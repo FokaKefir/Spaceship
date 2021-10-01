@@ -6,7 +6,7 @@ public class Alert {
     public static final int ROOM_MEDICAL_ID = 1;
     public static final int ROOM_LAB_ID = 2;
     public static final int ROOM_TECH_ID = 3;
-    public static final int ROOM_AIRLOCK = 4;
+    public static final int ROOM_AIRLOCK_ID = 4;
 
     private int roomId;
     private String code;
