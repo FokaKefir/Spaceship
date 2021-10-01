@@ -92,9 +92,9 @@
                 android:layout_height="match_parent"
                 android:layout_above="@id/layout_panel_buttons"
                 android:layout_below="@id/txt_commander"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginRight="16dp" />
+                android:layout_marginRight="12dp" />
 
             <LinearLayout
                 android:id="@+id/layout_panel_buttons"

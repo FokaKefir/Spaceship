@@ -6,43 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".gui.fragment.commander.SystemFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"/>
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="@id/vizszintes1"
+            app:layout_constraintBottom_toBottomOf="@id/vizszintes8"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges6"
+            app:layout_constraintEnd_toEndOf="@id/fuggoleges11">
 
+            <TextView
+                android:id="@+id/txt_system_communication_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: active"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txt_system_communication_delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_system_communication_status"
+                android:text="Delay: 10 min"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txt_system_oxygen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Oxygen: normal"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txt_system_tension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/txt_system_oxygen"
+                android:text="Tension: normal"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/txt_system_water_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/txt_system_tension"
+                android:text="Water pressure: normal"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes2"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges6"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes2"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges5"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes1"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges5"
+            app:layout_constraintTop_toTopOf="@id/vizszintes1"
             app:layout_constraintVertical_bias="0.0"
-            tools:src="@tools:sample/avatars"
-            tools:ignore="NotSibling" />
-
-
+            tools:src="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes2"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges6"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges5"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes1"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes2"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges5"
+            app:layout_constraintTop_toTopOf="@id/vizszintes1"
             tools:src="@tools:sample/avatars" />
 
         <ImageView
@@ -50,10 +96,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes2"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges6"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges5"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes1"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes2"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges5"
+            app:layout_constraintTop_toTopOf="@id/vizszintes1"
             tools:src="@tools:sample/avatars" />
 
         <ImageView
@@ -61,10 +107,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes3"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges12"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges11"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes7"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes3"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges12"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges11"
+            app:layout_constraintTop_toTopOf="@id/vizszintes7"
             tools:src="@tools:sample/avatars" />
 
         <ImageView
@@ -72,10 +118,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes3"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges6"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges5"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes7"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes3"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges5"
+            app:layout_constraintTop_toTopOf="@id/vizszintes7"
             tools:src="@tools:sample/avatars" />
 
         <ImageView
@@ -83,10 +129,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes2"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges12"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges11"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes1"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes2"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges12"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges11"
+            app:layout_constraintTop_toTopOf="@id/vizszintes1"
             tools:src="@tools:sample/avatars" />
 
         <ImageView
@@ -94,10 +140,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes4"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges7"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges6"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes8"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes4"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges7"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges6"
+            app:layout_constraintTop_toTopOf="@id/vizszintes8"
             tools:src="@drawable/ember" />
 
         <ImageView
@@ -105,13 +151,11 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/vizszintes4"
-            app:layout_constraintEnd_toStartOf="@+id/fuggoleges11"
-            app:layout_constraintStart_toStartOf="@+id/fuggoleges10"
-            app:layout_constraintTop_toTopOf="@+id/vizszintes8"
+            app:layout_constraintBottom_toTopOf="@id/vizszintes4"
+            app:layout_constraintEnd_toStartOf="@id/fuggoleges11"
+            app:layout_constraintStart_toStartOf="@id/fuggoleges10"
+            app:layout_constraintTop_toTopOf="@id/vizszintes8"
             tools:src="@tools:sample/avatars" />
-
-
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/vizszintes1"
@@ -185,7 +229,6 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.3" />
 
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/fuggoleges9"
             android:layout_width="wrap_content"
@@ -215,4 +258,5 @@
             app:layout_constraintGuide_percent="0.95" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
