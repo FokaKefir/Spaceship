@@ -100,7 +100,7 @@ public class KnowledgeFragment extends Fragment implements View.OnClickListener 
         AssetManager assetManager = this.activity.getAssets();
         try {
             for (String file : assetManager.list("")) {
-                if (file.endsWith(".html"))
+                if (file.endsWith(".html") && !file.endsWith("TEMPLATE.html"))
                     this.documentNames.add(file);
             }
         } catch (IOException e) {

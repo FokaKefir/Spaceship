@@ -98,4 +98,20 @@ public class GameService{
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
+
+	public int getMinutes() {
+		return minutes;
+	}
+
+	public void setMinutes(int minutes) {
+		this.minutes = minutes;
+	}
+
+	public int getTime() {
+		return time;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
 }

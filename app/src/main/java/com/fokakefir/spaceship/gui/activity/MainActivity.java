@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.fragment.AirlockFragment;
@@ -19,6 +22,7 @@ import com.fokakefir.spaceship.logic.GameService;
 import com.fokakefir.spaceship.model.Alert;
 import com.fokakefir.spaceship.model.HealthData;
 import com.fokakefir.spaceship.model.OrbitalData;
+import com.fokakefir.spaceship.model.SystemData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -29,7 +33,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // region 0. Constants
 
-    public static final int DELAY_MINUTES = 1;
+    public static final int ONE_TICK_MINUTES = 2;
+    //public static final int ONE_MINUTE_IN_MILLISECONDS = 60000;
+    public static final int ONE_MINUTE_IN_MILLISECONDS = 1000;
 
     // endregion
 
@@ -52,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private FloatingActionButton fabLeft;
     private FloatingActionButton fabRight;
 
+    private TextView txtTime;
+    private TextView txtTick;
+
     private Handler handler;
 
     // endregion
@@ -65,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         this.fabLeft = findViewById(R.id.fab_left);
         this.fabRight = findViewById(R.id.fab_right);
+        this.txtTime = findViewById(R.id.txt_time);
+        this.txtTick = findViewById(R.id.txt_tick);
 
         this.fabLeft.setOnClickListener(this);
         this.fabRight.setOnClickListener(this);
@@ -101,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         this.gameService = new GameService();
         this.handler = new Handler();
+        this.handler.postDelayed(this.runnable, ONE_MINUTE_IN_MILLISECONDS);
     }
 
 
@@ -187,19 +199,47 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // region 5. Game loop
 
-    final Runnable r = new Runnable() {
+    final Runnable runnable = new Runnable() {
         public void run() {
-            nextTick();
-            handler.postDelayed(this, DELAY_MINUTES * 60 * 1000);
+            int minutes = gameService.getMinutes();
+            minutes++;
+            displayTime(minutes);
+            if (minutes % ONE_TICK_MINUTES == 0) {
+                nextTick();
+            }
+            gameService.setMinutes(minutes);
+            handler.postDelayed(this, ONE_MINUTE_IN_MILLISECONDS);
         }
     };
 
     private void nextTick() {
-        if (this.gameService.tick() == 0) {
+        if (this.gameService.tick() == -1) {
             // TODO dead
+            Toast.makeText(this, "dead", Toast.LENGTH_SHORT).show();
         } else {
             // TODO refresh
         }
+        this.txtTick.setText("Tick: " + this.gameService.getTime());
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void displayTime(int minutes) {
+        String strHour;
+        String strMin;
+        int hour = minutes / 60;
+        int min = minutes % 60;
+
+        if (hour < 10)
+            strHour = "0" + hour;
+        else
+            strHour = hour + "";
+
+        if (min < 10)
+            strMin = "0" + min;
+        else
+            strMin = min + "";
+
+        this.txtTime.setText(strHour + ":" + strMin);
     }
 
     // endregion
@@ -207,6 +247,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     // region 6. Getters and Setters
 
     // TODO Getters
+    public SystemData getSystemData() {
+        SystemData systemData = new SystemData();
+        return systemData;
+    }
+
     public OrbitalData getOrbitalData() {
         OrbitalData orbitalData = new OrbitalData();
         return orbitalData;

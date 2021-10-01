@@ -109,26 +109,25 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
             this.btnCommanderTable.setVisibility(View.VISIBLE);
         } else if (view.getId() == R.id.btn_system_check) {
             this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
-            this.selectedFragment = new SystemFragment(this.activity);
+            this.selectedFragment = new SystemFragment(this.activity, this.activity.getSystemData());
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
             this.txtCommanderPanel.setText("System check");
         } else if (view.getId() == R.id.btn_orbital_check) {
             this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
-            this.selectedFragment = new OrbitalFragment(this.activity);
+            this.selectedFragment = new OrbitalFragment(this.activity, this.activity.getOrbitalData());
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
             this.txtCommanderPanel.setText("Orbital check");
         } else if (view.getId() == R.id.btn_alerts_check) {
             this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
-            List<Alert> alerts = new ArrayList<>();
-            this.selectedFragment = new AlertsFragment(this.activity, alerts);
+            this.selectedFragment = new AlertsFragment(this.activity, this.activity.getAlerts());
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
             this.txtCommanderPanel.setText("Alerts");
         } else if (view.getId() == R.id.btn_last_health_status_check) {
             this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
-            this.selectedFragment = new HealthFragment(this.activity);
+            this.selectedFragment = new HealthFragment(this.activity, this.activity.getHealthData());
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
             this.txtCommanderPanel.setText("Health status");

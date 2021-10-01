@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.activity.MainActivity;
+import com.fokakefir.spaceship.model.SystemData;
 
 public class SystemFragment extends Fragment {
 
@@ -23,12 +24,19 @@ public class SystemFragment extends Fragment {
 
     private MainActivity activity;
 
+    private SystemData systemData;
+
     // endregion
 
     // region 2. Lifecycle and constructor
 
     public SystemFragment(MainActivity activity) {
         this.activity = activity;
+    }
+
+    public SystemFragment(MainActivity activity, SystemData systemData) {
+        this.activity = activity;
+        this.systemData = systemData;
     }
 
     @Override
