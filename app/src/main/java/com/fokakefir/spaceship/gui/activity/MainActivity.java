@@ -2,9 +2,12 @@ package com.fokakefir.spaceship.gui.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -251,7 +254,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // region 6. Getters and Setters
 
-    // TODO Getters
     public SystemData getSystemData() {
         SystemData systemData = new SystemData();
         return systemData;
