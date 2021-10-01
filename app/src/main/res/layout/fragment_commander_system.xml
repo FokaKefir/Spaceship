@@ -142,7 +142,8 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/ic_earth"
+
+            android:src="@drawable/communication_system"
             app:layout_constraintBottom_toTopOf="@id/vizszintes2"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
             app:layout_constraintStart_toStartOf="@id/fuggoleges5"
@@ -160,11 +161,16 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/ic_earth"
-            app:layout_constraintBottom_toTopOf="@id/vizszintes3"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+
+            android:background="@drawable/jetpack_motor"
+            app:layout_constraintBottom_toTopOf="@+id/vizszintes3"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/fuggoleges5"
-            app:layout_constraintTop_toTopOf="@id/vizszintes7" />
+            app:layout_constraintTop_toTopOf="@id/vizszintes7"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:layout_width="0dp"
@@ -240,14 +246,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05" />
+            app:layout_constraintGuide_percent="0.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/fuggoleges6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintGuide_percent="0.09" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/fuggoleges7"
@@ -282,14 +288,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.85" />
+            app:layout_constraintGuide_percent="0.91" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/fuggoleges12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.95" />
+            app:layout_constraintGuide_percent="1.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline10"
@@ -311,6 +317,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="354dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="260dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
