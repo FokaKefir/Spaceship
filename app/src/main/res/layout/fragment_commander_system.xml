@@ -17,8 +17,10 @@
             android:layout_margin="8dp"
             app:layout_constraintBottom_toTopOf="@+id/vizszintes7"
             app:layout_constraintEnd_toEndOf="@id/fuggoleges11"
+            app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintStart_toStartOf="@id/fuggoleges6"
-            app:layout_constraintTop_toTopOf="@id/vizszintes1">
+            app:layout_constraintTop_toTopOf="@+id/guideline10"
+            app:layout_constraintVertical_bias="0.0">
 
             <TextView
                 android:id="@+id/txt_system_communication_status"
@@ -33,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txt_system_communication_status"
+                android:layout_marginTop="0dp"
                 android:text="Delay: 10 min"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -62,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="8dp"
-            app:layout_constraintBottom_toBottomOf="@id/vizszintes8"
+            app:layout_constraintBottom_toTopOf="@+id/vizszintes8"
             app:layout_constraintEnd_toEndOf="@id/fuggoleges11"
             app:layout_constraintStart_toStartOf="@id/fuggoleges6"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
@@ -139,56 +142,56 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:src="@drawable/ic_earth"
             app:layout_constraintBottom_toTopOf="@id/vizszintes2"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
             app:layout_constraintStart_toStartOf="@id/fuggoleges5"
-            app:layout_constraintTop_toTopOf="@id/vizszintes1"
-            android:src="@drawable/ic_earth" />
+            app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:src="@drawable/ic_earth"
             app:layout_constraintBottom_toTopOf="@id/vizszintes3"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges12"
             app:layout_constraintStart_toStartOf="@id/fuggoleges11"
-            app:layout_constraintTop_toTopOf="@id/vizszintes7"
-            android:src="@drawable/ic_earth" />
+            app:layout_constraintTop_toTopOf="@id/vizszintes7" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:src="@drawable/ic_earth"
             app:layout_constraintBottom_toTopOf="@id/vizszintes3"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
             app:layout_constraintStart_toStartOf="@id/fuggoleges5"
-            app:layout_constraintTop_toTopOf="@id/vizszintes7"
-            android:src="@drawable/ic_earth" />
+            app:layout_constraintTop_toTopOf="@id/vizszintes7" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:src="@drawable/ic_earth"
             app:layout_constraintBottom_toTopOf="@id/vizszintes2"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges12"
             app:layout_constraintStart_toStartOf="@id/fuggoleges11"
-            app:layout_constraintTop_toTopOf="@id/vizszintes1"
-            android:src="@drawable/ic_earth" />
+            app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:src="@drawable/ember"
             app:layout_constraintBottom_toTopOf="@id/vizszintes4"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges7"
             app:layout_constraintStart_toStartOf="@id/fuggoleges6"
-            app:layout_constraintTop_toTopOf="@id/vizszintes8"
-            android:src="@drawable/ember" />
+            app:layout_constraintTop_toTopOf="@id/vizszintes8" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:src="@drawable/ic_earth"
             app:layout_constraintBottom_toTopOf="@id/vizszintes4"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges11"
             app:layout_constraintStart_toStartOf="@id/fuggoleges10"
-            app:layout_constraintTop_toTopOf="@id/vizszintes8"
-            android:src="@drawable/ic_earth" />
+            app:layout_constraintTop_toTopOf="@id/vizszintes8" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/vizszintes1"
@@ -287,6 +290,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="-5dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="-3dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="354dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
