@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="Status: active"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/txt_system_communication_delay"
@@ -34,36 +34,92 @@
                 android:layout_below="@id/txt_system_communication_status"
                 android:text="Delay: 10 min"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
             <TextView
-                android:id="@+id/txt_system_oxygen"
+                android:id="@+id/txt_system_engine_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/txt_system_engine_temperature"
+                android:text="Status: active"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_system_engine_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/txt_system_engine_thrust"
+                android:text="Temperature: 120 C"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txt_system_engine_thrust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/txt_system_engine_fuel"
+                android:text="Thrust: 5000 J"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txt_system_engine_fuel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Fuel: 0 L"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txt_system_health_oxygen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/txt_system_health_tension"
+                android:layout_alignParentEnd="true"
+                android:text="Health sys. oxygen: 50%"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_system_health_tension"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:text="Oxygen: 50%"
+                android:layout_above="@id/txt_system_water_pressure"
+                android:text="Health sys. tension: 50%"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:id="@+id/txt_system_tension"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@id/txt_system_oxygen"
-                android:text="Tension: 50%"
-                android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/txt_system_water_pressure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@id/txt_system_tension"
+                android:layout_alignParentBottom="true"
                 android:text="Water pressure: 50%"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txt_system_reactor_oxygen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Reactor oxygen: 50%"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txt_system_reactor_tension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/txt_system_reactor_oxygen"
+                android:text="Reactor tension: 50%"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
 
         </RelativeLayout>
 
@@ -162,7 +218,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1" />
+            app:layout_constraintGuide_percent="0.05" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -192,14 +248,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.70" />
+            app:layout_constraintGuide_percent="0.80" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/vizszintes4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.9" />
+            app:layout_constraintGuide_percent="1" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/fuggoleges5"

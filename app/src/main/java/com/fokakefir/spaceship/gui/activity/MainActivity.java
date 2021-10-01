@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             getSupportFragmentManager().beginTransaction()
                     .hide(this.selectedFragment).show(newFragment).commit();
             this.selectedFragment = newFragment;
-
+            this.gameService.setPlayerRoom(this.fragments.indexOf(this.selectedFragment));
             return true;
         }
         return false;
