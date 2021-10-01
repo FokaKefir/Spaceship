@@ -16,6 +16,9 @@ import com.fokakefir.spaceship.gui.fragment.LabFragment;
 import com.fokakefir.spaceship.gui.fragment.MedicalFragment;
 import com.fokakefir.spaceship.gui.fragment.TechnologyFragment;
 import com.fokakefir.spaceship.logic.GameService;
+import com.fokakefir.spaceship.model.Alert;
+import com.fokakefir.spaceship.model.HealthData;
+import com.fokakefir.spaceship.model.OrbitalData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -203,30 +206,21 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // region 6. Getters and Setters
 
-
-    // TODO getters
-    public int getTraveledDistance() {
-        return 0;
-    }
-    public int getDistance(){
-        return 0;
+    // TODO Getters
+    public OrbitalData getOrbitalData() {
+        OrbitalData orbitalData = new OrbitalData();
+        return orbitalData;
     }
 
-    public int getSpeed(){
-        return 0;
-    }
-    public int getAcceleration(){
-        return 0;
+    public List<Alert> getAlerts() {
+        List<Alert> alerts = new ArrayList<>();
+
+        return alerts;
     }
 
-    public int getTickRemaining(){
-        return 0;
-    }
-    public int getTrackDeviation(){
-        return 0;
-    }
-    public int getDistancePercent(){
-        return 0;
+    public HealthData getHealthData() {
+        HealthData healthData = new HealthData();
+        return healthData;
     }
 
 

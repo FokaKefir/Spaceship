@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.activity.MainActivity;
+import com.fokakefir.spaceship.model.HealthData;
 
 public class HealthFragment extends Fragment {
 
@@ -30,11 +31,7 @@ public class HealthFragment extends Fragment {
     private TextView txtBoneDensity;
     private TextView txtLastTimeChecked;
 
-    private int health;
-    private int percentRadioactivity;
-    private int percentMusclePower;
-    private int percentBoneDensity;
-    private int lastTick;
+    private HealthData healthData;
 
     // endregion
 
@@ -42,20 +39,12 @@ public class HealthFragment extends Fragment {
 
     public HealthFragment(MainActivity activity) {
         this.activity = activity;
-        this.health = 1;
-        this.percentRadioactivity = 0;
-        this.percentMusclePower = 0;
-        this.percentBoneDensity = 0;
-        this.lastTick = 0;
+        this.healthData = new HealthData();
     }
 
-    public HealthFragment(MainActivity activity, int health, int percentRadioactivity, int percentMusclePower, int percentBoneDensity, int lastTick) {
+    public HealthFragment(MainActivity activity, HealthData healthData) {
         this.activity = activity;
-        this.health = health;
-        this.percentRadioactivity = percentRadioactivity;
-        this.percentMusclePower = percentMusclePower;
-        this.percentBoneDensity = percentBoneDensity;
-        this.lastTick = lastTick;
+        this.healthData = healthData;
     }
 
     @Override
@@ -75,11 +64,11 @@ public class HealthFragment extends Fragment {
         this.txtBoneDensity = this.view.findViewById(R.id.txt_health_bone_density);
         this.txtLastTimeChecked = this.view.findViewById(R.id.txt_health_last_time_checked);
 
-        setHealth(this.health);
-        setRadioActivity(this.percentRadioactivity);
-        setMusclePower(this.percentMusclePower);
-        setBoneDestiny(this.percentBoneDensity);
-        setLastTimeChecked(this.lastTick);
+        setHealth(this.healthData.getHealth());
+        setRadioActivity(this.healthData.getPercentRadioactivity());
+        setMusclePower(this.healthData.getPercentMusclePower());
+        setBoneDestiny(this.healthData.getPercentBoneDensity());
+        setLastTimeChecked(this.healthData.getLastTick());
 
         return this.view;
     }

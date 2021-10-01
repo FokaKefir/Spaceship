@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.activity.MainActivity;
+import com.fokakefir.spaceship.model.OrbitalData;
 
 public class OrbitalFragment extends Fragment {
 
@@ -29,13 +30,7 @@ public class OrbitalFragment extends Fragment {
 
     private ProgressBar progressDistance;
 
-    private int traveledDistance;
-    private int distance;
-    private int speed;
-    private int acceleration;
-    private int tickRemaining;
-    private int trackDeviation;
-    private int distancePercent;
+    private OrbitalData orbitalData;
 
     // endregion
 
@@ -43,24 +38,12 @@ public class OrbitalFragment extends Fragment {
 
     public OrbitalFragment(MainActivity activity) {
         this.activity = activity;
-        this.traveledDistance = 0;
-        this.distance = 0;
-        this.speed = 0;
-        this.acceleration = 0;
-        this.tickRemaining = 0;
-        this.trackDeviation = 0;
-        this.distancePercent = 0;
+        this.orbitalData = new OrbitalData();
     }
 
-    public OrbitalFragment(MainActivity activity, int traveledDistance, int distance, int speed, int acceleration, int tickRemaining, int trackDeviation, int distancePercent) {
+    public OrbitalFragment(MainActivity activity, OrbitalData orbitalData) {
         this.activity = activity;
-        this.traveledDistance = traveledDistance;
-        this.distance = distance;
-        this.speed = speed;
-        this.acceleration = acceleration;
-        this.tickRemaining = tickRemaining;
-        this.trackDeviation = trackDeviation;
-        this.distancePercent = distancePercent;
+        this.orbitalData = orbitalData;
     }
 
     @Override
@@ -75,13 +58,13 @@ public class OrbitalFragment extends Fragment {
         this.txtTrackDeviation = this.view.findViewById(R.id.txt_orbital_track_deviation);
         this.progressDistance = this.view.findViewById(R.id.progress_orbital_distance);
 
-        setTraveledDistance(this.traveledDistance);
-        setDistance(this.distance);
-        setSpeed(this.speed);
-        setAcceleration(this.acceleration);
-        setTickRemaining(this.tickRemaining);
-        setTrackDeviation(this.trackDeviation);
-        setProgressDistance(this.distancePercent);
+        setTraveledDistance(this.orbitalData.getTraveledDistance());
+        setDistance(this.orbitalData.getDistance());
+        setSpeed(this.orbitalData.getSpeed());
+        setAcceleration(this.orbitalData.getAcceleration());
+        setTickRemaining(this.orbitalData.getTickRemaining());
+        setTrackDeviation(this.orbitalData.getTrackDeviation());
+        setProgressDistance(this.orbitalData.getDistancePercent());
 
         return this.view;
     }
