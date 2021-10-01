@@ -4,13 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23333333333333334" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable-v24/ic_mars_globe.xml" value="0.240625" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/contor_room_graphic.xml" value="0.240625" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_baseline_chevron_right_24.xml" value="0.240625" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_beta.xml" value="0.12604166666666666" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_commander.xml" value="0.240625" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_contror_room_final_simetric_m_solat.xml" value="0.240625" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_door.xml" value="0.240625" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_earth.xml" value="0.240625" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_earth_globe.xml" value="0.240625" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_heart_0.xml" value="0.240625" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_heart_1.xml" value="0.240625" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_lab.xml" value="0.240625" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23333333333333334" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_medical.xml" value="0.23333333333333334" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/ic_technology.xml" value="0.240625" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/drawable/panel_border.xml" value="0.240625" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/example_alert.xml" value="0.25" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_airlock.xml" value="0.22447916666666667" />
@@ -18,10 +27,10 @@
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_alerts.xml" value="0.10916919959473151" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_health.xml" value="0.22" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_knowledge.xml" value="0.1" />
-        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_orbital.xml" value="0.1" />
-        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_system.xml" value="0.1" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_orbital.xml" value="0.25" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_system.xml" value="0.18" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_lab.xml" value="0.22447916666666667" />
-        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_medical.xml" value="0.1" />
+        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_medical.xml" value="0.33" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_technology.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/menu/bottom_navigation.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/drawable/panel_border.xml" value="0.24177631578947367" />

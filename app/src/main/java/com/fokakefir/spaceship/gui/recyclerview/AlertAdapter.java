@@ -19,6 +19,7 @@ public class AlertAdapter extends RecyclerView.Adapter<AlertAdapter.AlertViewHol
     // region 1. Decl and Init
 
     private List<Alert> alerts;
+  //  Alert actualalert=new Alert()
 
     // endregion
 

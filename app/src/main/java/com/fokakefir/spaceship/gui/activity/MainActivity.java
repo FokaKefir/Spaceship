@@ -208,6 +208,27 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public int getTraveledDistance() {
         return 0;
     }
+    public int getDistance(){
+        return 0;
+    }
+
+    public int getSpeed(){
+        return 0;
+    }
+    public int getAcceleration(){
+        return 0;
+    }
+
+    public int getTickRemaining(){
+        return 0;
+    }
+    public int getTrackDeviation(){
+        return 0;
+    }
+    public int getDistancePercent(){
+        return 0;
+    }
+
 
     // endregion
 
