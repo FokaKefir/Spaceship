@@ -181,4 +181,8 @@ public class Ship{
 
 		return str.toString();
 	}
+
+	public void destroyInstance() {
+		instance = null;
+	}
 }

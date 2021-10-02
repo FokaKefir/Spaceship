@@ -76,10 +76,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-        if (getIntent().getBooleanExtra("restart", false)) {
-            getIntent().removeExtra("restart");
-            recreate();
-        }
+        Ship.getInstance().destroyInstance();
 
         this.fabLeft = findViewById(R.id.fab_left);
         this.fabRight = findViewById(R.id.fab_right);
@@ -264,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.running = false;
         this.handler.removeCallbacks(this.runnable);
 
-        Intent intent = new Intent(MainActivity.this, EndActivity.class);
+        Intent intent = new Intent(this, EndActivity.class);
         intent.putExtra("win", win);
         startActivity(intent);
         finish();
