@@ -26,6 +26,8 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
 
     private View view;
 
+    private MainActivity activity;
+
     private RelativeLayout layoutMedical;
 
     private Button btnMedicalTable;
@@ -34,7 +36,7 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
     private Button btnCheck;
     private Button btnHeal;
 
-    private MainActivity activity;
+    private HealthFragment healthFragment;
 
     // endregion
 
@@ -61,8 +63,9 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
         this.btnCheck.setOnClickListener(this);
         this.btnHeal.setOnClickListener(this);
 
+        this.healthFragment = new HealthFragment(this.activity, this.activity.getHealthData());
         this.activity.getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_medical, new HealthFragment(this.activity, this.activity.getHealthData())).commit();
+                .add(R.id.fragment_container_medical, this.healthFragment).commit();
 
         return this.view;
     }
@@ -86,9 +89,15 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
 
             this.btnMedicalTable.setVisibility(View.VISIBLE);
         } else if (view.getId() == R.id.btn_heal) {
-
+            this.activity.healPlayer();
         } else if (view.getId() == R.id.btn_check) {
-            
+            this.activity.makeNewHealthCheck();
+
+            this.activity.getSupportFragmentManager().beginTransaction()
+                    .remove(this.healthFragment).commit();
+            this.healthFragment = new HealthFragment(this.activity, this.activity.getHealthData());
+            this.activity.getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_medical, new HealthFragment(this.activity, this.activity.getHealthData())).commit();
         }
     }
 

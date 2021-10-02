@@ -20,15 +20,17 @@ public class GameService{
 	private Ship ship;
 	private Player player;
 	private int SAFE_DEVIATION;
+	private HealthData lastHealthDataCheck;
 	private List<Alert> alerts;
 
 	public GameService(){
 		time = 0;
 		minutes = 0;
 		ship = ship.getInstance();
-		player = new Player(4);
+		player = new Player(5);
 		SAFE_DEVIATION = 100;
 		nextFlare = (int)(Math.random()*5) + 17;
+		this.lastHealthDataCheck = new HealthData(player.getMaxHealth(), 0, 100, 100, 0);
 		this.alerts = new ArrayList<>();
 	}
 
@@ -131,13 +133,18 @@ public class GameService{
 			flareDuration = (int)(Math.random()*3) +4;
 			alerts.add(new Alert(Alert.ROOM_LAB_ID, getAlertTime(), "warning", "Solar flare Incoming"));
 		}
-		if((flareDuration-- > 0) && player.getRoom() != 2)player.damage();
+		if((flareDuration-- > 0) && player.getRoom() != 2 && !player.isMovable())player.damage();
 		if(flareDuration ==0 )nextFlare =  (int)(Math.random()*8) +17;
 
 		if(player.getCurrentHealth() < 1 || ship.getReactorTemperature() > 3)
 			return -1;
 		if(++time>100)return 1;
 		return 0;
+	}
+
+	public void heal() {
+		if (time > player.getLastHealedTick())
+			this.player.heal(time);
 	}
 
 	public String toString(){
@@ -148,6 +155,11 @@ public class GameService{
 		str.append(player.toString());
 		str.append(ship.toString());
 		return str.toString();
+	}
+
+	public void makeNewHealthCheck() {
+		// TODO Ede csinald meg
+		this.lastHealthDataCheck = new HealthData();
 	}
 
 	public Ship getShip() {
@@ -179,11 +191,13 @@ public class GameService{
 	}
 
 	public SystemData getSystemData() {
+		// TODO Ede csinald meg
 		SystemData systemData = new SystemData();
 		return systemData;
 	}
 
 	public OrbitalData getOrbitalData() {
+		// TODO Ede csinald meg
 		OrbitalData orbitalData = new OrbitalData();
 		return orbitalData;
 	}
@@ -193,12 +207,19 @@ public class GameService{
 	}
 
 	public HealthData getHealthData() {
-		HealthData healthData = new HealthData();
-		return healthData;
+		return this.lastHealthDataCheck;
 	}
 
 	public void setPlayerRoom(int room) {
 		this.player.setRoom(room);
+	}
+
+	public void setPlayerMovable(boolean movable) {
+		this.player.setMovable(movable);
+	}
+
+	public boolean isPlayerMovable() {
+		return this.player.isMovable();
 	}
 
 	private String getAlertTime() {
