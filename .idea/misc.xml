@@ -9,7 +9,6 @@
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_airlock.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander.xml" value="0.22447916666666667" />
-        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_commander_system.xml" value="0.17" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_lab.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_medical.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_technology.xml" value="0.22447916666666667" />
@@ -24,8 +23,8 @@
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_health.xml" value="0.2" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_knowledge.xml" value="0.16564207650273224" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_orbital.xml" value="0.2" />
-        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_system.xml" value="0.22" />
-        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_lab.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_commander_system.xml" value="0.16" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_lab.xml" value="0.2" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_medical.xml" value="0.2" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/fragment_technology.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.17894736842105263" />

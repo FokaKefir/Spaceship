@@ -131,7 +131,7 @@ public class GameService{
 			flareDuration = (int)(Math.random()*3) +4;
 			alerts.add(new Alert(Alert.ROOM_LAB_ID, getAlertTime(), "warning", "Solar flare Incoming"));
 		}
-		if((flareDuration-- > 0) && player.getRoom() != 2)player.damage();
+		if((flareDuration-- > 0) && player.getRoom() != 2 && !player.isMovable())player.damage();
 		if(flareDuration ==0 )nextFlare =  (int)(Math.random()*8) +17;
 
 		if(player.getCurrentHealth() < 1 || ship.getReactorTemperature() > 3)
@@ -199,6 +199,14 @@ public class GameService{
 
 	public void setPlayerRoom(int room) {
 		this.player.setRoom(room);
+	}
+
+	public void setPlayerMovable(boolean movable) {
+		this.player.setMovable(movable);
+	}
+
+	public boolean isPlayerMovable() {
+		return this.player.isMovable();
 	}
 
 	private String getAlertTime() {

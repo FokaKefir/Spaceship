@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (!this.gameService.isPlayerMovable())
+            return false;
+
         Fragment newFragment = null;
 
         switch (item.getItemId()) {
@@ -271,6 +274,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public HealthData getHealthData() {
         HealthData healthData = new HealthData();
         return healthData;
+    }
+
+    public void setPlayerMovable(boolean movable) {
+        this.gameService.setPlayerMovable(movable);
+    }
+
+    public boolean isPlayerMovable() {
+        return this.gameService.isPlayerMovable();
     }
 
     // endregion

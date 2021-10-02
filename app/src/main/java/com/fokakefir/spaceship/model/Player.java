@@ -4,11 +4,13 @@ public class Player{
 	private int maxHealth;
 	private int currentHealth;
 	private int room;
+	private boolean movable;
 
 	public Player(int maxHealth){
 		this.room = 0;
 		this.maxHealth = maxHealth;
 		this.currentHealth = maxHealth;
+		this.movable = true;
 	}
 
 	public int getRoom(){
@@ -64,5 +66,13 @@ public class Player{
 
 	public void setRoom(int room) {
 		this.room = room;
+	}
+
+	public boolean isMovable() {
+		return movable;
+	}
+
+	public void setMovable(boolean movable) {
+		this.movable = movable;
 	}
 }

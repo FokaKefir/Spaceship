@@ -26,6 +26,8 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
 
     private View view;
 
+    private MainActivity activity;
+
     private RelativeLayout layoutMedical;
 
     private Button btnMedicalTable;
@@ -33,8 +35,6 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
 
     private Button btnCheck;
     private Button btnHeal;
-
-    private MainActivity activity;
 
     // endregion
 
