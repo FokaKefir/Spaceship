@@ -1,5 +1,7 @@
 package com.fokakefir.spaceship.model;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Alert {
 
     public static final int ROOM_COMMANDER_ID = 0;
@@ -14,7 +16,12 @@ public class Alert {
     private String type;
     private String problem;
 
-    public Alert() {
+    public Alert(int roomId, String date, String type, String problem) {
+        this.roomId = roomId;
+        this.code = String.valueOf(ThreadLocalRandom.current().nextInt(1000, 9999 + 1));
+        this.date = date;
+        this.type = type;
+        this.problem = problem;
     }
 
     public Alert(int roomId, String code, String date, String type, String problem) {

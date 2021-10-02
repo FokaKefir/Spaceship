@@ -265,26 +265,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     public List<Alert> getAlerts() {
-        List<Alert> alerts = new ArrayList<>();
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        alerts.add(new Alert(Alert.ROOM_TECH_ID, "0001", "12:45", "warning", "felserult a segglyukam"));
-        return alerts;
+        return this.gameService.getAlerts();
     }
 
     public HealthData getHealthData() {
