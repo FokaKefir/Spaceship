@@ -129,6 +129,359 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.31" />
 
+        <RelativeLayout
+            android:id="@+id/layout_technology"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.75"
+            android:background="@drawable/panel_border"
+            app:layout_constraintBottom_toBottomOf="@id/guideline19"
+            app:layout_constraintEnd_toEndOf="@id/guideline17"
+            app:layout_constraintStart_toStartOf="@id/guideline16"
+            app:layout_constraintTop_toTopOf="@id/guideline18">
+
+            <ImageButton
+                android:id="@+id/btn_close_technology_panel"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_close_24"
+                android:tint="@color/white" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Thrust: "
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_thrust_raise"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/txt_technology_thrust_value"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_raise_24"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txt_technology_thrust_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/btn_technology_thrust_lower"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_thrust_lower"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_lower_24"
+                            android:tint="@color/white" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Voltage: "
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_voltage_raise"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/txt_technology_voltage_value"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_raise_24"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txt_technology_voltage_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/btn_technology_voltage_lower"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_voltage_lower"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_lower_24"
+                            android:tint="@color/white" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Oxygen level: "
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_oxygen_level_raise"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/txt_technology_oxygen_level_value"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_raise_24"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txt_technology_oxygen_level_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/btn_technology_oxygen_level_lower"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_oxygen_level_lower"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_lower_24"
+                            android:tint="@color/white" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Reactor temperature: "
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_reactor_temperature_raise"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/txt_technology_reactor_temperature_value"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_raise_24"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txt_technology_reactor_temperature_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/btn_technology_reactor_temperature_lower"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_reactor_temperature_lower"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_lower_24"
+                            android:tint="@color/white" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Water pressure: "
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_water_pressure_raise"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/txt_technology_water_pressure_value"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_raise_24"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txt_technology_water_pressure_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/btn_technology_water_pressure_lower"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_technology_water_pressure_lower"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_lower_24"
+                            android:tint="@color/white" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:id="@+id/txt_technology_thruster_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Thruster: active"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/btn_technology_thruster_repair"
+                            android:layout_width="wrap_content"
+                            android:layout_height="42dp"
+                            android:layout_alignParentEnd="true"
+                            android:text="repair"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:id="@+id/txt_technology_communication_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Communication: active"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/btn_technology_communication_repair"
+                            android:layout_width="wrap_content"
+                            android:layout_height="42dp"
+                            android:layout_alignParentEnd="true"
+                            android:text="repair"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.98" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

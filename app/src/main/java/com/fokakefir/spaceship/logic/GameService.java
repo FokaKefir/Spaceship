@@ -13,6 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameService{
+
+	public static final int THRUST_RAISE = 1;
+	public static final int THRUST_LOWER = 2;
+	public static final int VOLTAGE_RAISE = 3;
+	public static final int VOLTAGE_LOWER = 4;
+	public static final int OXYGEN_LEVEL_RAISE = 5;
+	public static final int OXYGEN_LEVEL_LOWER = 6;
+	public static final int REACTOR_TEMPERATURE_RAISE = 7;
+	public static final int REACTOR_TEMPERATURE_LOWER = 8;
+	public static final int WATER_PRESSURE_RAISE = 9;
+	public static final int WATER_PRESSURE_LOWER = 10;
+	public static final int THRUSTER_MEND = 11;
+	public static final int COMMUNICATION_MEND = 12;
+
 	private int time;
 	private int minutes;
 	private int nextFlare;
@@ -133,7 +147,7 @@ public class GameService{
 			flareDuration = (int)(Math.random()*3) +4;
 			alerts.add(new Alert(Alert.ROOM_LAB_ID, getAlertTime(), "warning", "Solar flare Incoming"));
 		}
-		if((flareDuration-- > 0) && player.getRoom() != 2 && !player.isMovable())player.damage();
+		if((flareDuration-- > 0) && player.getRoom() != 2)player.damage();
 		if(flareDuration ==0 )nextFlare =  (int)(Math.random()*8) +17;
 
 		if(player.getCurrentHealth() < 1 || ship.getReactorTemperature() > 3)
@@ -159,7 +173,9 @@ public class GameService{
 
 	public void makeNewHealthCheck() {
 		// TODO Ede csinald meg
-		this.lastHealthDataCheck = new HealthData();
+		this.lastHealthDataCheck = new HealthData(
+				this.player.getCurrentHealth(), 0, 0, 0, time
+		);
 	}
 
 	public Ship getShip() {
@@ -220,6 +236,47 @@ public class GameService{
 
 	public boolean isPlayerMovable() {
 		return this.player.isMovable();
+	}
+
+	public void changeShipData(int type) {
+		switch (type) {
+			case THRUST_RAISE:
+				this.ship.raiseThrust();
+				break;
+			case THRUST_LOWER:
+				this.ship.lowerThrust();
+				break;
+			case VOLTAGE_RAISE:
+				this.ship.raiseVoltage();
+				break;
+			case VOLTAGE_LOWER:
+				this.ship.lowerVoltage();
+				break;
+			case OXYGEN_LEVEL_RAISE:
+				this.ship.raiseOxygenLevel();
+				break;
+			case OXYGEN_LEVEL_LOWER:
+				this.ship.lowerOxygenLevel();
+				break;
+			case REACTOR_TEMPERATURE_RAISE:
+				this.ship.raiseReactorTemperature();
+				break;
+			case REACTOR_TEMPERATURE_LOWER:
+				this.ship.lowerReactorTemperature();
+				break;
+			case WATER_PRESSURE_RAISE:
+				this.ship.raiseWaterPressure();
+				break;
+			case WATER_PRESSURE_LOWER :
+				this.ship.lowerWaterPressure();
+				break;
+			case THRUSTER_MEND:
+				this.ship.mendThruster();
+				break;
+			case COMMUNICATION_MEND:
+				this.ship.mendCommunication();
+				break;
+		}
 	}
 
 	private String getAlertTime() {

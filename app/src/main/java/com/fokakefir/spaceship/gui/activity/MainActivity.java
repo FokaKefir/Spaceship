@@ -25,6 +25,7 @@ import com.fokakefir.spaceship.logic.GameService;
 import com.fokakefir.spaceship.model.Alert;
 import com.fokakefir.spaceship.model.HealthData;
 import com.fokakefir.spaceship.model.OrbitalData;
+import com.fokakefir.spaceship.model.Ship;
 import com.fokakefir.spaceship.model.SystemData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -36,9 +37,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // region 0. Constants
 
-    public static final int ONE_TICK_MINUTES = 2;
-    //public static final int ONE_MINUTE_IN_MILLISECONDS = 60000;
-    public static final int ONE_MINUTE_IN_MILLISECONDS = 1000;
+    public static final int ONE_TICK_MINUTES = 2; // Hany perc egy tick
+    //public static final int ONE_MINUTE_IN_MILLISECONDS = 60000; // Ez egy perc
+    public static final int ONE_MINUTE_IN_MILLISECONDS = 1000; // Ez egy masodperc
 
     // endregion
 
@@ -226,18 +227,24 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.gameService.makeNewHealthCheck();
     }
 
+    public void changeShipData(int type) {
+        this.gameService.changeShipData(type);
+    }
+
     private void nextTick() {
         if (this.gameService.tick() == -1) {
             endGame(false);
+        } else {
+            this.technologyFragment.setShip(this.gameService.getShip());
         }
         this.txtTick.setText("Tick: " + this.gameService.getTime());
     }
 
     private void endGame(boolean win) {
         if (win) {
+            Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show();
+        } else {    
             Toast.makeText(this, "Game ended, you loose", Toast.LENGTH_SHORT).show();
-        } else {
-
         }
     }
 
@@ -287,6 +294,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     public boolean isPlayerMovable() {
         return this.gameService.isPlayerMovable();
+    }
+
+    public Ship getShip() {
+        return this.gameService.getShip();
     }
 
     // endregion

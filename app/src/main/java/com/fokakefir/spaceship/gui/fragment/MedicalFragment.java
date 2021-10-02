@@ -97,7 +97,7 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
                     .remove(this.healthFragment).commit();
             this.healthFragment = new HealthFragment(this.activity, this.activity.getHealthData());
             this.activity.getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container_medical, new HealthFragment(this.activity, this.activity.getHealthData())).commit();
+                    .add(R.id.fragment_container_medical, this.healthFragment).commit();
         }
     }
 
