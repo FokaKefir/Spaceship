@@ -20,15 +20,17 @@ public class GameService{
 	private Ship ship;
 	private Player player;
 	private int SAFE_DEVIATION;
+	private HealthData lastHealthDataCheck;
 	private List<Alert> alerts;
 
 	public GameService(){
 		time = 0;
 		minutes = 0;
 		ship = ship.getInstance();
-		player = new Player(4);
+		player = new Player(5);
 		SAFE_DEVIATION = 100;
 		nextFlare = (int)(Math.random()*5) + 17;
+		this.lastHealthDataCheck = new HealthData(player.getMaxHealth(), 0, 100, 100, 0);
 		this.alerts = new ArrayList<>();
 	}
 
@@ -155,6 +157,11 @@ public class GameService{
 		return str.toString();
 	}
 
+	public void makeNewHealthCheck() {
+		// TODO Ede csinald meg
+		this.lastHealthDataCheck = new HealthData();
+	}
+
 	public Ship getShip() {
 		return ship;
 	}
@@ -184,11 +191,13 @@ public class GameService{
 	}
 
 	public SystemData getSystemData() {
+		// TODO Ede csinald meg
 		SystemData systemData = new SystemData();
 		return systemData;
 	}
 
 	public OrbitalData getOrbitalData() {
+		// TODO Ede csinald meg
 		OrbitalData orbitalData = new OrbitalData();
 		return orbitalData;
 	}
@@ -198,8 +207,7 @@ public class GameService{
 	}
 
 	public HealthData getHealthData() {
-		HealthData healthData = new HealthData();
-		return healthData;
+		return this.lastHealthDataCheck;
 	}
 
 	public void setPlayerRoom(int room) {

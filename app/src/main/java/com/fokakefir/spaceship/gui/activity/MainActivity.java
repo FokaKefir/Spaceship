@@ -222,6 +222,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.gameService.heal();
     }
 
+    public void makeNewHealthCheck() {
+        this.gameService.makeNewHealthCheck();
+    }
+
     private void nextTick() {
         if (this.gameService.tick() == -1) {
             endGame(false);
@@ -262,13 +266,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     // region 6. Getters and Setters
 
     public SystemData getSystemData() {
-        SystemData systemData = new SystemData();
-        return systemData;
+        return this.gameService.getSystemData();
     }
 
     public OrbitalData getOrbitalData() {
-        OrbitalData orbitalData = new OrbitalData();
-        return orbitalData;
+        return this.gameService.getOrbitalData();
     }
 
     public List<Alert> getAlerts() {
@@ -276,8 +278,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     public HealthData getHealthData() {
-        HealthData healthData = new HealthData();
-        return healthData;
+        return this.gameService.getHealthData();
     }
 
     public void setPlayerMovable(boolean movable) {
