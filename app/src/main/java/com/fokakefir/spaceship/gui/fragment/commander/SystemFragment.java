@@ -4,11 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -101,11 +96,11 @@ public class SystemFragment extends Fragment {
     }
 
     public void setEngineTemperature(int temperature) {
-        this.txtEngineTemperature.setText("Temperature: " + temperature + " C");
+        this.txtEngineTemperature.setText("Temp.: " + temperature + " °C");
     }
 
     public void setEngineThrust(int thrust) {
-        this.txtEngineThrust.setText("Thrust: " + thrust + " J");
+        this.txtEngineThrust.setText("Thrust: " + thrust + " kN");
     }
 
     public void setEngineFuel(int fuel) {
@@ -113,11 +108,11 @@ public class SystemFragment extends Fragment {
     }
 
     public void setHealthOxygen(int percent) {
-        this.txtHealthOxygen.setText("Health sys. oxygen: " + percent + "%");
+        this.txtHealthOxygen.setText("Health s. O₂: " + percent + "%");
     }
 
     public void setHealthTension(int percent) {
-        this.txtHealthTension.setText("Health sys. tension: "  + percent + "%");
+        this.txtHealthTension.setText("Health s. Volt.: "  + percent + "%");
     }
 
     public void setWaterPressure(int percent) {
@@ -125,7 +120,7 @@ public class SystemFragment extends Fragment {
     }
 
     public void setReactorOxygen(int percent) {
-        this.txtReactorOxygen.setText("Reactor oxygen: " + percent + "%");
+        this.txtReactorOxygen.setText("Reactor O₂: " + percent + "%");
     }
 
     public void setReactorTension(int percent) {

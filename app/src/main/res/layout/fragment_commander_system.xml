@@ -184,24 +184,6 @@
             app:layout_constraintStart_toStartOf="@id/fuggoleges11"
             app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:src="@drawable/ember"
-            app:layout_constraintBottom_toTopOf="@id/vizszintes4"
-            app:layout_constraintEnd_toStartOf="@id/fuggoleges7"
-            app:layout_constraintStart_toStartOf="@id/fuggoleges6"
-            app:layout_constraintTop_toTopOf="@id/vizszintes8" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:src="@drawable/ic_earth"
-            app:layout_constraintBottom_toTopOf="@id/vizszintes4"
-            app:layout_constraintEnd_toStartOf="@id/fuggoleges11"
-            app:layout_constraintStart_toStartOf="@id/fuggoleges10"
-            app:layout_constraintTop_toTopOf="@id/vizszintes8" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/vizszintes1"
             android:layout_width="wrap_content"
