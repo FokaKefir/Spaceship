@@ -25,6 +25,7 @@ import com.fokakefir.spaceship.logic.GameService;
 import com.fokakefir.spaceship.model.Alert;
 import com.fokakefir.spaceship.model.HealthData;
 import com.fokakefir.spaceship.model.OrbitalData;
+import com.fokakefir.spaceship.model.Ship;
 import com.fokakefir.spaceship.model.SystemData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -226,9 +227,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.gameService.makeNewHealthCheck();
     }
 
+    public void changeShipData(int type) {
+        this.gameService.changeShipData(type);
+    }
+
     private void nextTick() {
         if (this.gameService.tick() == -1) {
             endGame(false);
+        } else {
+            this.technologyFragment.setShip(this.gameService.getShip());
         }
         this.txtTick.setText("Tick: " + this.gameService.getTime());
     }
@@ -287,6 +294,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     public boolean isPlayerMovable() {
         return this.gameService.isPlayerMovable();
+    }
+
+    public Ship getShip() {
+        return this.gameService.getShip();
     }
 
     // endregion

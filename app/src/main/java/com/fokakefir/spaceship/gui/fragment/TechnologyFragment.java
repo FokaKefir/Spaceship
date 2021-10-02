@@ -1,5 +1,6 @@
 package com.fokakefir.spaceship.gui.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import androidx.fragment.app.Fragment;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.activity.MainActivity;
+import com.fokakefir.spaceship.logic.GameService;
+import com.fokakefir.spaceship.model.Ship;
 
 public class TechnologyFragment extends Fragment implements View.OnClickListener {
 
@@ -51,6 +54,14 @@ public class TechnologyFragment extends Fragment implements View.OnClickListener
     private ImageButton btnWaterPressureLower;
     private TextView txtWaterPressureValue;
 
+    private Button btnThrusterRepair;
+    private TextView txtThrusterStatus;
+
+    private Button btnCommunicationRepair;
+    private TextView txtCommunicationStatus;
+
+    private Ship ship;
+
     // endregion
 
     // region 2. Lifecycle and constructor
@@ -82,6 +93,10 @@ public class TechnologyFragment extends Fragment implements View.OnClickListener
         this.btnWaterPressureRaise = this.view.findViewById(R.id.btn_technology_water_pressure_raise);
         this.btnWaterPressureLower = this.view.findViewById(R.id.btn_technology_water_pressure_lower);
         this.txtWaterPressureValue = this.view.findViewById(R.id.txt_technology_water_pressure_value);
+        this.btnThrusterRepair = this.view.findViewById(R.id.btn_technology_thruster_repair);
+        this.txtThrusterStatus = this.view.findViewById(R.id.txt_technology_thruster_status);
+        this.btnCommunicationRepair = this.view.findViewById(R.id.btn_technology_communication_repair);
+        this.txtCommunicationStatus = this.view.findViewById(R.id.txt_technology_communication_status);
 
         this.layoutTechnology.setVisibility(View.GONE);
 
@@ -98,6 +113,10 @@ public class TechnologyFragment extends Fragment implements View.OnClickListener
         this.btnReactorTemperatureLower.setOnClickListener(this);
         this.btnWaterPressureRaise.setOnClickListener(this);
         this.btnWaterPressureLower.setOnClickListener(this);
+        this.btnThrusterRepair.setOnClickListener(this);
+        this.btnCommunicationRepair.setOnClickListener(this);
+
+        setShip(this.activity.getShip());
 
         return this.view;
     }
@@ -122,8 +141,83 @@ public class TechnologyFragment extends Fragment implements View.OnClickListener
 
             this.btnDisplayTop.setVisibility(View.VISIBLE);
             this.btnDisplayBottom.setVisibility(View.VISIBLE);
+        } else {
+            int type = 0;
+            switch (view.getId()) {
+                case R.id.btn_technology_thrust_raise:
+                    type = GameService.THRUST_RAISE;
+                    break;
+
+                case R.id.btn_technology_thrust_lower:
+                    type = GameService.THRUST_LOWER;
+                    break;
+
+                case R.id.btn_technology_voltage_raise:
+                    type = GameService.VOLTAGE_RAISE;
+                    break;
+
+                case R.id.btn_technology_voltage_lower:
+                    type = GameService.VOLTAGE_LOWER;
+                    break;
+
+                case R.id.btn_technology_oxygen_level_raise:
+                    type = GameService.OXYGEN_LEVEL_RAISE;
+                    break;
+
+                case R.id.btn_technology_oxygen_level_lower:
+                    type = GameService.OXYGEN_LEVEL_LOWER;
+                    break;
+
+                case R.id.btn_technology_reactor_temperature_raise:
+                    type = GameService.REACTOR_TEMPERATURE_RAISE;
+                    break;
+
+                case R.id.btn_technology_reactor_temperature_lower:
+                    type = GameService.REACTOR_TEMPERATURE_LOWER;
+                    break;
+
+                case R.id.btn_technology_water_pressure_raise:
+                    type = GameService.WATER_PRESSURE_RAISE;
+                    break;
+
+                case R.id.btn_technology_water_pressure_lower:
+                    type = GameService.WATER_PRESSURE_LOWER;
+                    break;
+
+                case R.id.btn_technology_thruster_repair:
+                    type = GameService.THRUSTER_MEND;
+                    break;
+
+                case R.id.btn_technology_communication_repair:
+                    type = GameService.COMMUNICATION_MEND;
+                    break;
+            }
+
+            this.activity.changeShipData(type);
+            setShip(this.activity.getShip());
         }
     }
 
     // endregion
+
+    // region 4. Getters and Setters
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void setShip(Ship ship) {
+        this.ship = ship;
+        this.txtThrustValue.setText(this.ship.getThrust() + "");
+        this.txtVoltageValue.setText(this.ship.getVoltage() + "");
+        this.txtOxygenLevelValue.setText(this.ship.getOxygenLevel() + "");
+        this.txtReactorTemperatureValue.setText(this.ship.getReactorTemperature() + "");
+        this.txtWaterPressureValue.setText(this.ship.getWaterPressure() + "");
+        this.txtThrusterStatus.setText("Thruster: " + (this.ship.getThruster() ? "active" : "inactive"));
+        this.txtCommunicationStatus.setText("Communication: " + (this.ship.getCommunication() ? "active" : "inactive"));
+    }
+
+    // endregion
+
 }
