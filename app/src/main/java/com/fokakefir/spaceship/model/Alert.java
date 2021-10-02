@@ -18,7 +18,7 @@ public class Alert {
 
     public Alert(int roomId, String date, String type, String problem) {
         this.roomId = roomId;
-        this.code = String.valueOf(ThreadLocalRandom.current().nextInt(0, 9999 + 1));
+        this.code = String.valueOf(ThreadLocalRandom.current().nextInt(1000, 9999 + 1));
         this.date = date;
         this.type = type;
         this.problem = problem;
