@@ -57,11 +57,17 @@ public class Ship{
 	}
 
 	public void raiseThrust(){
+		if (thrust > 2)
+			return;
+
 		Ship s = getInstance();
 		s.thrust++;
 	}
 
 	public void lowerThrust(){
+		if (thrust < 1)
+			return;
+
 		Ship s = getInstance();
 		s.thrust--;
 	}

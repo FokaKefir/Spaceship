@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Spaceship">
-        <activity android:name=".gui.activity.MainActivity"
+        <activity
+            android:name=".gui.activity.EndActivity"
+            android:exported="true"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".gui.activity.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape">
             <intent-filter>

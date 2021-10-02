@@ -2,18 +2,15 @@ package com.fokakefir.spaceship.gui.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.pm.PackageManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.fragment.AirlockFragment;
@@ -68,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private TextView txtAlert;
 
     private Handler handler;
+    private boolean running;
 
     // endregion
 
@@ -77,6 +75,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
+
+        if (getIntent().getBooleanExtra("restart", false)) {
+            getIntent().removeExtra("restart");
+            recreate();
+        }
 
         this.fabLeft = findViewById(R.id.fab_left);
         this.fabRight = findViewById(R.id.fab_right);
@@ -120,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.gameService = new GameService();
         this.handler = new Handler();
         this.handler.postDelayed(this.runnable, ONE_MINUTE_IN_MILLISECONDS);
+        this.running = true;
     }
 
 
@@ -210,15 +214,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     // region 5. Game loop
 
     final Runnable runnable = new Runnable() {
+        @Override
         public void run() {
-            int minutes = gameService.getMinutes();
-            minutes++;
-            displayTime(minutes);
-            if (minutes % ONE_TICK_MINUTES == 0) {
-                nextTick();
+            if (running) {
+                int minutes = gameService.getMinutes();
+                minutes++;
+                displayTime(minutes);
+                if (minutes % ONE_TICK_MINUTES == 0) {
+                    nextTick();
+                }
+                gameService.setMinutes(minutes);
+                handler.postDelayed(this, ONE_MINUTE_IN_MILLISECONDS);
             }
-            gameService.setMinutes(minutes);
-            handler.postDelayed(this, ONE_MINUTE_IN_MILLISECONDS);
         }
     };
 
@@ -254,11 +261,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     private void endGame(boolean win) {
-        if (win) {
-            Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Game ended, you loose", Toast.LENGTH_SHORT).show();
-        }
+        this.running = false;
+        this.handler.removeCallbacks(this.runnable);
+
+        Intent intent = new Intent(MainActivity.this, EndActivity.class);
+        intent.putExtra("win", win);
+        startActivity(intent);
+        finish();
     }
 
     @SuppressLint("SetTextI18n")
