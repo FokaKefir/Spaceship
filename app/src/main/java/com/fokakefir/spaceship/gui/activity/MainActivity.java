@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // region 0. Constants
 
-    public static final int ONE_TICK_MINUTES = 2;
-    //public static final int ONE_MINUTE_IN_MILLISECONDS = 60000;
-    public static final int ONE_MINUTE_IN_MILLISECONDS = 1000;
+    public static final int ONE_TICK_MINUTES = 2; // Hany perc egy tick
+    //public static final int ONE_MINUTE_IN_MILLISECONDS = 60000; // Ez egy perc
+    public static final int ONE_MINUTE_IN_MILLISECONDS = 1000; // Ez egy masodperc
 
     // endregion
 
@@ -242,9 +242,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private void endGame(boolean win) {
         if (win) {
+            Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show();
+        } else {    
             Toast.makeText(this, "Game ended, you loose", Toast.LENGTH_SHORT).show();
-        } else {
-
         }
     }
 

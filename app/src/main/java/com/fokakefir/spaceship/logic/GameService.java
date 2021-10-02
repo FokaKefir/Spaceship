@@ -173,7 +173,9 @@ public class GameService{
 
 	public void makeNewHealthCheck() {
 		// TODO Ede csinald meg
-		this.lastHealthDataCheck = new HealthData();
+		this.lastHealthDataCheck = new HealthData(
+				this.player.getCurrentHealth(), 0, 0, 0, time
+		);
 	}
 
 	public Ship getShip() {
