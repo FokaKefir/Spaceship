@@ -152,7 +152,8 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/ic_earth"
+            android:background="@drawable/oxigen_final"
+
             app:layout_constraintBottom_toTopOf="@id/vizszintes3"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges12"
             app:layout_constraintStart_toStartOf="@id/fuggoleges11"
@@ -161,10 +162,12 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
 
-            android:background="@drawable/jetpack_motor"
+            
+
+
+            android:src="@drawable/rocket2"
+            android:layout_centerVertical="true"
             app:layout_constraintBottom_toTopOf="@+id/vizszintes3"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges6"
             app:layout_constraintHorizontal_bias="0.0"
@@ -175,7 +178,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/ic_earth"
+            android:src="@drawable/sci_fi_power_generator_free_3d_model_obj_fbx_blend"
             app:layout_constraintBottom_toTopOf="@id/vizszintes2"
             app:layout_constraintEnd_toStartOf="@id/fuggoleges12"
             app:layout_constraintStart_toStartOf="@id/fuggoleges11"
