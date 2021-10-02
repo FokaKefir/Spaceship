@@ -112,7 +112,7 @@ public class SystemFragment extends Fragment {
     }
 
     public void setHealthTension(int percent) {
-        this.txtHealthTension.setText("Health s. Volt.: "  + percent + "%");
+        this.txtHealthTension.setText("Health s. volt.: "  + percent + "%");
     }
 
     public void setWaterPressure(int percent) {
@@ -120,11 +120,11 @@ public class SystemFragment extends Fragment {
     }
 
     public void setReactorOxygen(int percent) {
-        this.txtReactorOxygen.setText("Reactor O₂: " + percent + "%");
+        this.txtReactorOxygen.setText("Reactor temp.: " + percent + "%");
     }
 
     public void setReactorTension(int percent) {
-        this.txtReactorTension.setText("Reactor tension: " + percent + "%");
+        this.txtReactorTension.setText("Reactor volt.: " + percent + "%");
     }
 
     // endregion
