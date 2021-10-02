@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public static final int ONE_TICK_MINUTES = 2; // Hany perc egy tick
     //public static final int ONE_MINUTE_IN_MILLISECONDS = 60000; // Ez egy perc
     public static final int ONE_MINUTE_IN_MILLISECONDS = 1000; // Ez egy masodperc
+    public static final int GAME_END_TICK = 100;
 
     // endregion
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private TextView txtTime;
     private TextView txtTick;
+    private TextView txtAlert;
 
     private Handler handler;
 
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.fabRight = findViewById(R.id.fab_right);
         this.txtTime = findViewById(R.id.txt_time);
         this.txtTick = findViewById(R.id.txt_tick);
+        this.txtAlert = findViewById(R.id.txt_main_alert);
 
         this.fabLeft.setOnClickListener(this);
         this.fabRight.setOnClickListener(this);
@@ -235,15 +238,25 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (this.gameService.tick() == -1) {
             endGame(false);
         } else {
-            this.technologyFragment.setShip(this.gameService.getShip());
+            refreshViews();
+            if (this.gameService.getTime() == GAME_END_TICK)
+                endGame(true);
         }
         this.txtTick.setText("Tick: " + this.gameService.getTime());
+    }
+
+    private void refreshViews() {
+        this.technologyFragment.setShip(this.gameService.getShip());
+        if (!this.gameService.getAlerts().isEmpty()) {
+            Alert alert = this.gameService.getAlerts().get(this.gameService.getAlerts().size() - 1);
+            this.txtAlert.setText(alert.getProblem());
+        }
     }
 
     private void endGame(boolean win) {
         if (win) {
             Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show();
-        } else {    
+        } else {
             Toast.makeText(this, "Game ended, you loose", Toast.LENGTH_SHORT).show();
         }
     }
