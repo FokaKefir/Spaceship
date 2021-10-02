@@ -20,7 +20,11 @@
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_medical.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/layout/fragment_technology.xml" value="0.22447916666666667" />
         <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/menu/bottom_navigation.xml" value="0.22447916666666667" />
-        <entry key="..\:/NASA SOK.0/Spaceship/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/NASA_Space_Apps_Challenge/Spaceship/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.403125" />
+        <entry key="..\:/NASA_Space_Apps_Challenge/Spaceship/app/src/main/res/drawable/ic_baseline_chevron_right_24.xml" value="0.403125" />
+        <entry key="..\:/NASA_Space_Apps_Challenge/Spaceship/app/src/main/res/drawable/ic_beta.xml" value="0.403125" />
+        <entry key="..\:/NASA_Space_Apps_Challenge/Spaceship/app/src/main/res/drawable/transparent_bg_bordered.xml" value="0.403125" />
+        <entry key="..\:/NASA_Space_Apps_Challenge/Spaceship/app/src/main/res/layout/fragment_commander.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17894736842105263" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/drawable/panel_border.xml" value="0.24177631578947367" />
         <entry key="..\:/Users/david/AndroidStudioProjects/Spaceship/app/src/main/res/layout/activity_main.xml" value="0.25" />

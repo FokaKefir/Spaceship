@@ -13,27 +13,31 @@
 
         <Button
             android:id="@+id/btn_commander_table"
+            style="@android:style/Widget.Button"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="@id/guideline2"
-            app:layout_constraintEnd_toEndOf="@id/guideline3"
-            app:layout_constraintTop_toTopOf="@id/guideline4"
+            android:alpha="0.5"
+            android:background="@color/transparent"
+            android:foreground="@drawable/transparent_bg_bordered"
+            android:rotationX="58"
             app:layout_constraintBottom_toBottomOf="@id/guideline5"
-            android:background="?android:attr/selectableItemBackground" />
+            app:layout_constraintEnd_toEndOf="@id/guideline3"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@id/guideline4" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.25" />
+            app:layout_constraintGuide_percent="0.255" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.75" />
+            app:layout_constraintGuide_percent="0.745" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -53,12 +57,12 @@
             android:id="@+id/layout_commander"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="@id/guideline6"
-            app:layout_constraintEnd_toEndOf="@id/guideline7"
-            app:layout_constraintTop_toTopOf="@id/guideline8"
-            app:layout_constraintBottom_toBottomOf="@id/guideline9"
             android:alpha="0.75"
-            android:background="@drawable/panel_border">
+            android:background="@drawable/panel_border"
+            app:layout_constraintBottom_toBottomOf="@id/guideline9"
+            app:layout_constraintEnd_toEndOf="@id/guideline7"
+            app:layout_constraintStart_toStartOf="@id/guideline6"
+            app:layout_constraintTop_toTopOf="@id/guideline8">
 
             <ImageButton
                 android:id="@+id/btn_close_command_panel"
@@ -70,9 +74,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:tint="@color/white"
                 android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/ic_baseline_close_24" />
+                android:src="@drawable/ic_baseline_close_24"
+                android:tint="@color/white" />
 
             <TextView
                 android:id="@+id/txt_commander"
