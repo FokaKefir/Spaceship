@@ -86,7 +86,7 @@ public class MedicalFragment extends Fragment implements View.OnClickListener {
 
             this.btnMedicalTable.setVisibility(View.VISIBLE);
         } else if (view.getId() == R.id.btn_heal) {
-
+            this.activity.healPlayer();
         } else if (view.getId() == R.id.btn_check) {
             
         }

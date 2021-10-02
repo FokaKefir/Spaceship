@@ -4,6 +4,7 @@ public class Player{
 	private int maxHealth;
 	private int currentHealth;
 	private int room;
+	private int lastHealedTick;
 	private boolean movable;
 
 	public Player(int maxHealth){
@@ -11,6 +12,7 @@ public class Player{
 		this.maxHealth = maxHealth;
 		this.currentHealth = maxHealth;
 		this.movable = true;
+		this.lastHealedTick = 0;
 	}
 
 	public int getRoom(){
@@ -21,9 +23,10 @@ public class Player{
 		return currentHealth;
 	}
 
-	public int heal(){
+	public int heal(int tick){
 		if(currentHealth == maxHealth)return 0;
 		currentHealth++;
+		lastHealedTick = tick;
 		return 1;
 	}
 
@@ -74,5 +77,13 @@ public class Player{
 
 	public void setMovable(boolean movable) {
 		this.movable = movable;
+	}
+
+	public int getLastHealedTick() {
+		return lastHealedTick;
+	}
+
+	public void setLastHealedTick(int lastHealedTick) {
+		this.lastHealedTick = lastHealedTick;
 	}
 }

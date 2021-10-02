@@ -218,6 +218,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
     };
 
+    public void healPlayer() {
+        this.gameService.heal();
+    }
+
     private void nextTick() {
         if (this.gameService.tick() == -1) {
             endGame(false);

@@ -140,6 +140,11 @@ public class GameService{
 		return 0;
 	}
 
+	public void heal() {
+		if (time > player.getLastHealedTick())
+			this.player.heal(time);
+	}
+
 	public String toString(){
 		StringBuilder str = new StringBuilder();
 		str.append("Time:");
