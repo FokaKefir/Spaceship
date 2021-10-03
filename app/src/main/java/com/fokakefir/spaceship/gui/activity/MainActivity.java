@@ -33,7 +33,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     // region 0. Constants
-
     public static final int ONE_TICK_MINUTES = 2; // Hany perc egy tick
     //public static final int ONE_MINUTE_IN_MILLISECONDS = 60000; // Ez egy perc
     public static final int ONE_MINUTE_IN_MILLISECONDS = 1000; // Ez egy masodperc

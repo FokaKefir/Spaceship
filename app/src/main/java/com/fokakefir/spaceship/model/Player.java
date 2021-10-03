@@ -1,5 +1,7 @@
 package com.fokakefir.spaceship.model;
 
+import com.fokakefir.spaceship.gui.activity.MainActivity;
+
 public class Player{
 	private int maxHealth;
 	private int currentHealth;
@@ -7,12 +9,19 @@ public class Player{
 	private int lastHealedTick;
 	private boolean movable;
 
+	private int percentRadioactivity;
+	private float percentMusclePower;
+	private float percentBoneDensity;
+
 	public Player(int maxHealth){
 		this.room = 0;
 		this.maxHealth = maxHealth;
 		this.currentHealth = maxHealth;
 		this.movable = true;
 		this.lastHealedTick = 0;
+		this.percentRadioactivity = 0;
+		this.percentMusclePower = 100;
+		this.percentBoneDensity = 100;
 	}
 
 	public int getRoom(){
@@ -32,6 +41,19 @@ public class Player{
 
 	public boolean damage(){
 		return((--currentHealth) == 0);
+	}
+
+	public void damageByRadioactivity() {
+		if (movable)
+			this.percentRadioactivity += 1;
+	}
+
+	public void decreaseBoneDensity() {
+		this.percentBoneDensity -= (60.0 / (float)MainActivity.GAME_END_TICK);
+	}
+
+	public void decreaseMusclePower() {
+		this.percentMusclePower -= (60.0 / (float)MainActivity.GAME_END_TICK);
 	}
 
 	public void moveLeft(){
@@ -85,5 +107,17 @@ public class Player{
 
 	public void setLastHealedTick(int lastHealedTick) {
 		this.lastHealedTick = lastHealedTick;
+	}
+
+	public int getPercentRadioactivity() {
+		return percentRadioactivity;
+	}
+
+	public float getPercentMusclePower() {
+		return percentMusclePower;
+	}
+
+	public float getPercentBoneDensity() {
+		return percentBoneDensity;
 	}
 }

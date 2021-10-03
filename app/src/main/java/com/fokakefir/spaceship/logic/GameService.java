@@ -1,6 +1,7 @@
 package com.fokakefir.spaceship.logic;
 
 
+import com.fokakefir.spaceship.gui.activity.MainActivity;
 import com.fokakefir.spaceship.model.Alert;
 import com.fokakefir.spaceship.model.HealthData;
 import com.fokakefir.spaceship.model.OrbitalData;
@@ -71,6 +72,9 @@ public class GameService {
     }
 
     public int tick() {
+        this.player.decreaseBoneDensity();
+        this.player.decreaseMusclePower();
+
         if ((ship.getDeviation() < -SAFE_DEVIATION) || (ship.getDeviation() > SAFE_DEVIATION)) {
             if (Math.random() < 0.1) {
                 ship.lowerWaterPressure();
@@ -140,9 +144,10 @@ public class GameService {
         if (--nextFlare < 1) {
             flareDuration = (int) (Math.random() * 3) + 4;
             alerts.add(new Alert(Alert.ROOM_LAB_ID, getAlertTime(), "CRITICAL ALERT", "A solar flare has been detected! Please ingress the radiation shield!"));
+            this.player.damageByRadioactivity();
         }
         if ((flareDuration-- > 0) && player.getRoom() != 2) player.damage();
-        if (flareDuration == 0) nextFlare = (int) (Math.random() * 8) + 17;
+        if (flareDuration == 0) nextFlare = (int) (Math.random() * 5) + 5;
 
         if (player.getCurrentHealth() < 1 || ship.getReactorTemperature() > 3)
             return -1;
@@ -166,9 +171,12 @@ public class GameService {
     }
 
     public void makeNewHealthCheck() {
-        // TODO Ede csinald meg
         this.lastHealthDataCheck = new HealthData(
-                this.player.getCurrentHealth(), 0, 0, 0, time
+                this.player.getCurrentHealth(),
+                this.player.getPercentRadioactivity(),
+                (int) this.player.getPercentMusclePower(),
+                (int) this.player.getPercentBoneDensity(),
+                time
         );
     }
 
@@ -201,14 +209,32 @@ public class GameService {
     }
 
     public SystemData getSystemData() {
-        // TODO Ede csinald meg
-        SystemData systemData = new SystemData();
+        SystemData systemData = new SystemData(
+                this.ship.getCommunication(),
+                (int)((((float)time) / (float) MainActivity.GAME_END_TICK) * 2000),
+                this.ship.getThruster(),
+                0,
+                0,
+                0,
+                this.ship.getOxygenLevel() * 50,
+                this.ship.getVoltage() * 50,
+                this.ship.getWaterPressure() * 50,
+                this.ship.getOxygenLevel() * 50,
+                this.ship.getVoltage() * 50
+        );
         return systemData;
     }
 
     public OrbitalData getOrbitalData() {
-        // TODO Ede csinald meg
-        OrbitalData orbitalData = new OrbitalData();
+        OrbitalData orbitalData = new OrbitalData(
+                (int)((((float)time) / (float) MainActivity.GAME_END_TICK) * 62000000.0),
+                (int)((1.0 - (((float)time) / (float) MainActivity.GAME_END_TICK)) * 62000000.0),
+                (int)(50000 + Math.random() * 10000),
+                (int)(Math.random() * 10),
+                MainActivity.GAME_END_TICK - time,
+                (int)(Math.random() * 1000),
+                (int)(((float)time * 100.0) / (float) MainActivity.GAME_END_TICK)
+        );
         return orbitalData;
     }
 
