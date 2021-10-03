@@ -118,7 +118,8 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:text="system check" />
+                    android:text="system check"
+                    android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/btn_orbital_check"
@@ -127,7 +128,8 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:text="orbital check" />
+                    android:text="orbital check"
+                    android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/btn_alerts_check"
@@ -136,7 +138,8 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:text="alerts" />
+                    android:text="alerts"
+                    android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/btn_last_health_status_check"
@@ -145,7 +148,8 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:text="health status" />
+                    android:text="health status"
+                    android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/btn_daily_knowledge_check"
@@ -154,7 +158,8 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:text="daily knowledge" />
+                    android:text="daily knowledge"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
