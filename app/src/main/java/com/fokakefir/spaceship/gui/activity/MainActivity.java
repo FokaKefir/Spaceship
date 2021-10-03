@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.fragment.AirlockFragment;
 import com.fokakefir.spaceship.gui.fragment.CommanderFragment;
-import com.fokakefir.spaceship.gui.fragment.LabFragment;
+import com.fokakefir.spaceship.gui.fragment.SolarShieldFragment;
 import com.fokakefir.spaceship.gui.fragment.MedicalFragment;
 import com.fokakefir.spaceship.gui.fragment.TechnologyFragment;
 import com.fokakefir.spaceship.logic.GameService;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private MedicalFragment medicalFragment;
     private CommanderFragment commanderFragment;
-    private LabFragment labFragment;
+    private SolarShieldFragment labFragment;
     private TechnologyFragment technologyFragment;
     private AirlockFragment airlockFragment;
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         this.commanderFragment = new CommanderFragment(this);
         this.medicalFragment = new MedicalFragment(this);
-        this.labFragment = new LabFragment(this);
+        this.labFragment = new SolarShieldFragment(this);
         this.technologyFragment = new TechnologyFragment(this);
         this.airlockFragment = new AirlockFragment(this);
 

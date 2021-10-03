@@ -84,7 +84,7 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
         this.activity.getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container_commander, this.selectedFragment).commit();
 
-        this.txtCommanderPanel.setText("Daily knowledge");
+        this.txtCommanderPanel.setText("Daily Knowledge");
 
         return this.view;
     }
@@ -112,13 +112,13 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
             this.selectedFragment = new SystemFragment(this.activity, this.activity.getSystemData());
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
-            this.txtCommanderPanel.setText("System check");
+            this.txtCommanderPanel.setText("System Check");
         } else if (view.getId() == R.id.btn_orbital_check) {
             this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
             this.selectedFragment = new OrbitalFragment(this.activity, this.activity.getOrbitalData());
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
-            this.txtCommanderPanel.setText("Orbital check");
+            this.txtCommanderPanel.setText("Orbital Check");
         } else if (view.getId() == R.id.btn_alerts_check) {
             this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
             this.selectedFragment = new AlertsFragment(this.activity, this.activity.getAlerts());
@@ -130,13 +130,13 @@ public class CommanderFragment extends Fragment implements View.OnClickListener 
             this.selectedFragment = new HealthFragment(this.activity, this.activity.getHealthData());
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
-            this.txtCommanderPanel.setText("Health status");
+            this.txtCommanderPanel.setText("Health Status");
         } else if (view.getId() == R.id.btn_daily_knowledge_check) {
             this.activity.getSupportFragmentManager().beginTransaction().remove(this.selectedFragment).commit();
             this.selectedFragment = new KnowledgeFragment(this.activity);
             this.activity.getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container_commander, this.selectedFragment).commit();
-            this.txtCommanderPanel.setText("Daily knowledge");
+            this.txtCommanderPanel.setText("Daily Knowledge");
         }
     }
 

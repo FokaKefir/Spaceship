@@ -74,7 +74,7 @@ public class OrbitalFragment extends Fragment {
     // region 3. Getters and Setters
 
     public void setTraveledDistance(int distance) {
-        this.txtTraveledDistance.setText("Distance traveled: " + distance + " km");
+        this.txtTraveledDistance.setText("Distance Traveled: " + distance + " km");
     }
 
     public void setDistance(int distance) {
@@ -94,7 +94,7 @@ public class OrbitalFragment extends Fragment {
     }
 
     public void setTrackDeviation(int distance) {
-        this.txtTrackDeviation.setText("Track deviation: " + distance + " km");
+        this.txtTrackDeviation.setText("Orbit Deviation: " + distance + " km");
     }
 
     public void setProgressDistance(int percent) {

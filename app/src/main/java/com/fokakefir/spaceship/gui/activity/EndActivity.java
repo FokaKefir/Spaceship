@@ -29,7 +29,7 @@ public class EndActivity extends AppCompatActivity implements View.OnClickListen
         if (intent.getBooleanExtra("win", true)) {
             this.txtEnding.setText("Congratulations!\nYou have successfully reached Mars!");
         } else {
-            this.txtEnding.setText("You fucked up!");
+            this.txtEnding.setText("You died!");
         }
     }
 

@@ -92,7 +92,7 @@ public class SystemFragment extends Fragment {
     }
 
     public void setEngineStatus(boolean active) {
-        this.txtEngineStatus.setText("Status: " + (active ? "active" : "inactive"));
+        this.txtEngineStatus.setText("Status: " + (active ? "Active" : "Inactive"));
     }
 
     public void setEngineTemperature(int temperature) {
@@ -108,23 +108,23 @@ public class SystemFragment extends Fragment {
     }
 
     public void setHealthOxygen(int percent) {
-        this.txtHealthOxygen.setText("Health s. O₂: " + percent + "%");
+        this.txtHealthOxygen.setText("Health S. O₂: " + percent + "%");
     }
 
     public void setHealthTension(int percent) {
-        this.txtHealthTension.setText("Health s. volt.: "  + percent + "%");
+        this.txtHealthTension.setText("Health S. volt.: "  + percent + "%");
     }
 
     public void setWaterPressure(int percent) {
-        this.txtWaterPressure.setText("Water pressure: " + percent + "%");
+        this.txtWaterPressure.setText("Water Pressure: " + percent + "%");
     }
 
     public void setReactorOxygen(int percent) {
-        this.txtReactorOxygen.setText("Reactor temp.: " + percent + "%");
+        this.txtReactorOxygen.setText("Reactor Temp.: " + percent + "%");
     }
 
     public void setReactorTension(int percent) {
-        this.txtReactorTension.setText("Reactor volt.: " + percent + "%");
+        this.txtReactorTension.setText("Reactor Volt.: " + percent + "%");
     }
 
     // endregion

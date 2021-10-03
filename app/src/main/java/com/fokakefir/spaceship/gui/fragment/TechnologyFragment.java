@@ -214,8 +214,8 @@ public class TechnologyFragment extends Fragment implements View.OnClickListener
         this.txtOxygenLevelValue.setText(this.ship.getOxygenLevel() + "");
         this.txtReactorTemperatureValue.setText(this.ship.getReactorTemperature() + "");
         this.txtWaterPressureValue.setText(this.ship.getWaterPressure() + "");
-        this.txtThrusterStatus.setText("Thruster: " + (this.ship.getThruster() ? "active" : "inactive"));
-        this.txtCommunicationStatus.setText("Communication: " + (this.ship.getCommunication() ? "active" : "inactive"));
+        this.txtThrusterStatus.setText("Thruster: " + (this.ship.getThruster() ? "Active" : "Inactive"));
+        this.txtCommunicationStatus.setText("Communication: " + (this.ship.getCommunication() ? "Active" : "Inactive"));
     }
 
     // endregion

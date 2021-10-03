@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.fokakefir.spaceship.R;
 import com.fokakefir.spaceship.gui.activity.MainActivity;
 
-public class LabFragment extends Fragment implements View.OnClickListener {
+public class SolarShieldFragment extends Fragment implements View.OnClickListener {
 
     // region 1. Decl and Init
 
@@ -34,7 +34,7 @@ public class LabFragment extends Fragment implements View.OnClickListener {
 
     // region 2. Lifecycle and constructor
 
-    public LabFragment(MainActivity activity) {
+    public SolarShieldFragment(MainActivity activity) {
         this.activity = activity;
     }
 
@@ -76,9 +76,9 @@ public class LabFragment extends Fragment implements View.OnClickListener {
             this.btnLabTable.setVisibility(View.VISIBLE);
         } else if (view.getId() == R.id.btn_hide) {
             if (this.activity.isPlayerMovable()) {
-                this.btnHide.setText("unhide");
+                this.btnHide.setText("Egress Shield");
             } else {
-                this.btnHide.setText("hide");
+                this.btnHide.setText("Ingress Shield");
             }
             this.activity.setPlayerMovable(!this.activity.isPlayerMovable());
         }

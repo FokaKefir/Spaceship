@@ -91,17 +91,17 @@ public class HealthFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")
     public void setMusclePower(int percent) {
-        this.txtMusclePower.setText("Muscle power: " + percent + "%");
+        this.txtMusclePower.setText("Muscle Strength: " + percent + "%");
     }
 
     @SuppressLint("SetTextI18n")
     public void setBoneDestiny(int percent) {
-        this.txtBoneDensity.setText("Bone density: " + percent + "%");
+        this.txtBoneDensity.setText("Bone Density: " + percent + "%");
     }
 
     @SuppressLint("SetTextI18n")
     public void setLastTimeChecked(int tick) {
-        this.txtLastTimeChecked.setText("Last time checked: " + tick + " tick");
+        this.txtLastTimeChecked.setText("Last Time Checked: " + tick + " tick");
     }
 
     // endregion
